@@ -12,7 +12,7 @@ pkgrel=3
 _branch=17.0
 pkgdesc='Manjaro Linux grub theme'
 arch=('any')
-url="https://github.com/manjaro/grub-theme"
+url="https://gitlab.manjaro.org/artwork/branding/grub-theme"
 license=('GPL')
 makedepends=('git')
 source=("git+$url.git#branch=$_branch")
