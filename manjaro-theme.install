@@ -9,7 +9,7 @@ cat << _EOF
 ==> Installation: Theme is added to your /etc/default/grub: GRUB_THEME="/usr/share/grub/themes/manjaro/theme.txt"
 ==> Default resolution "auto"
 ==> If an OS icon doesn't appear probably not present in /usr/share/grub/themes/manjaro/icons simply add it or merge in
-==> https://github.com/Ste74/grub-theme-dev
+==> https://gitlab.manjaro.org/artwork/branding/grub-theme
 
 _EOF
 }

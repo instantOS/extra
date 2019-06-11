@@ -6,16 +6,17 @@
 
 
 pkgbase=grub-theme-live
-pkgname=('grub-theme-live-common' 'grub-theme-live-manjaro' 'grub-theme-live-sonar' 'grub-theme-manjaro')
-pkgver=17.1.1
-pkgrel=4
-_branch=17.0
+pkgname=('grub-theme-live-common' 'grub-theme-live-manjaro' 'grub-theme-manjaro')
+pkgver=18.1
+pkgrel=1
+_commit=3820c8fe74187b08001bae3e005bd0d7f6bc333a
+
 pkgdesc='Manjaro Linux grub theme'
 arch=('any')
 url="https://gitlab.manjaro.org/artwork/branding/grub-theme"
 license=('GPL')
 makedepends=('git')
-source=("git+$url.git#branch=$_branch")
+source=("grub-theme::git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
 
 package_grub-theme-live-common() {
@@ -31,12 +32,6 @@ package_grub-theme-live-manjaro() {
 
     cd grub-theme
     make PREFIX=/usr DESTDIR=${pkgdir} install_manjaro
-}
-package_grub-theme-live-sonar() {
-    depends=('grub-theme-live-common')
-
-    cd grub-theme
-    make PREFIX=/usr DESTDIR=${pkgdir} install_sonar
 }
 
 package_grub-theme-manjaro() {
