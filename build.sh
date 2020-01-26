@@ -24,3 +24,30 @@ for i in $THEMES; do
     rm -rf src
     rm -rf pkg
 done
+
+cd ..
+
+cd instantmenu
+
+if [ -e src ]; then
+    rm -rf instantmenu-*
+    rm -rf src
+    rm -rf pkg
+    rm *.pkg.tar.xz
+fi
+
+for i in $THEMES; do
+    echo "$i" >/tmp/instanttheme
+    makepkg .
+    mv *.pkg.tar.xz ../build/instantmenu-$i.pkg.tar.xz
+    rm -rf instantmenu-*
+    rm -rf src
+    rm -rf pkg
+done
+
+cd ..
+
+cd build
+apindex .
+
+repo-add instant.db.tar.xz ./*.pkg.tar.xz
