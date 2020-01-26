@@ -7,30 +7,37 @@ manjaro"
 [ -e build ] && rm -rf build
 mkdir build
 
-cd instantwm
+buildclean() {
+    rm -rf src
+    rm -rf pkg
+    rm -rf $1*
+}
 
+cd instantwm
 for i in $THEMES; do
     echo "$i" >/tmp/instanttheme
     makepkg .
     mv *.pkg.tar.xz ../build/instantwm-$i.pkg.tar.xz
-    rm -rf instantwm-git
-    rm -rf src
-    rm -rf pkg
+    buildclean 'instantwm-'
 done
-
 cd ..
 
 cd instantmenu
-
 for i in $THEMES; do
     echo "$i" >/tmp/instanttheme
     makepkg .
     mv *.pkg.tar.xz ../build/instantmenu-$i.pkg.tar.xz
-    rm -rf instantmenu-*
-    rm -rf src
-    rm -rf pkg
+    buildclean 'instantmenu-'
 done
+cd ..
 
+cd instantlock
+for i in $THEMES; do
+    echo "$i" >/tmp/instanttheme
+    makepkg .
+    mv *.pkg.tar.xz ../build/instantlock-$i.pkg.tar.xz
+    buildclean 'instantlock-'
+done
 cd ..
 
 cd instantassist
@@ -39,6 +46,5 @@ mv *.pkg.tar.xz ../build/instantassist.pkg.tar.xz
 cd ..
 
 cd build
-apindex .
-
 repo-add instant.db.tar.xz ./*.pkg.tar.xz
+apindex .

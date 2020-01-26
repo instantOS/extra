@@ -6,3 +6,4 @@ build
 build/*
 instantmenu/instantmenu-*
 instantassist/instantassist
+instantlock/instantlock-*
