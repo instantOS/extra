@@ -22,6 +22,10 @@ pkgver() {
 
 prepare() {
   cd $_pkgname
+  if [ -e /tmp/instanttheme ]; then
+    echo "theme override found"
+    ./theme.sh "$(cat /tmp/instanttheme)"
+  fi
 }
 
 build() {
