@@ -1,4 +1,12 @@
-pkgname=instantwm
+if [ -e /tmp/instanttheme ]; then
+  echo "theme override found"
+  THEME=$(cat /tmp/instanttheme)
+else
+  THEME=manjaro
+fi
+
+pkgname=instantwm-$THEME
+echo package name $pkgname
 _pkgname=instantwm-git
 pkgver=not_done_yet
 pkgrel=1
@@ -9,8 +17,8 @@ license=('MIT')
 options=(zipman)
 depends=('libx11' 'libxinerama' 'libxft')
 makedepends=('git')
-provides=('dwm')
-conflicts=('dwm')
+provides=('instantwm')
+conflicts=('instantwm')
 
 source=("$_pkgname::git+https://github.com/instantOS/instantWM.git")
 md5sums=("SKIP")
