@@ -1,0 +1,36 @@
+pkgname=instantassist
+echo package name $pkgname
+_pkgname=instantassist
+pkgver=not_done_yet
+pkgrel=1
+pkgdesc="a bunch of shortcuts for instantOS"
+url="https://github.com/instantos/instantassist"
+arch=('i686' 'x86_64')
+license=('MIT')
+options=(zipman)
+depends=('bash')
+makedepends=('git')
+provides=('instantassist')
+
+source=("$_pkgname::git+https://github.com/instantOS/instantASSIST.git")
+md5sums=("SKIP")
+
+pkgver() {
+    cd $_pkgname
+    echo "not_done_yet"
+}
+
+prepare() {
+    echo "no prep"
+}
+
+build() {
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    export ASSISTPREFIX="$pkgdir"
+    echo "$pkgdir"
+    ./install.sh
+}
