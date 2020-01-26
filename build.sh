@@ -9,13 +9,6 @@ mkdir build
 
 cd instantwm
 
-if [ -e src ]; then
-    rm -rf instantwm-git
-    rm -rf src
-    rm -rf pkg
-    rm *.pkg.tar.xz
-fi
-
 for i in $THEMES; do
     echo "$i" >/tmp/instanttheme
     makepkg .
@@ -29,13 +22,6 @@ cd ..
 
 cd instantmenu
 
-if [ -e src ]; then
-    rm -rf instantmenu-*
-    rm -rf src
-    rm -rf pkg
-    rm *.pkg.tar.xz
-fi
-
 for i in $THEMES; do
     echo "$i" >/tmp/instanttheme
     makepkg .
@@ -45,6 +31,11 @@ for i in $THEMES; do
     rm -rf pkg
 done
 
+cd ..
+
+cd instantassist
+makepkg
+mv *.pkg.tar.xz ../build/instantassist.pkg.tar.xz
 cd ..
 
 cd build
