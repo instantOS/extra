@@ -6,12 +6,11 @@
 
 
 pkgbase=grub-theme-live
-pkgname=('grub-theme-live-common' 'grub-theme-live-manjaro' 'grub-theme-manjaro')
+pkgname=('grub-theme-live-common' 'grub-theme-live-instantos' 'grub-theme-instantos')
 pkgver=18.1
 pkgrel=1
-_commit=3820c8fe74187b08001bae3e005bd0d7f6bc333a
 
-pkgdesc='Manjaro Linux grub theme'
+pkgdesc='instantOS Linux grub theme'
 arch=('any')
 url="https://gitlab.manjaro.org/artwork/branding/grub-theme"
 license=('GPL')
@@ -21,7 +20,7 @@ sha256sums=('SKIP')
 
 package_grub-theme-live-common() {
     depends=('grub')
-    conflicts=('grub-theme-live')
+    conflicts=('grub-theme-live' 'grub-theme-live-manjaro' 'grub-theme-manjaro')
     replaces=('grub-theme-live')
 
     cd grub-theme
@@ -39,7 +38,7 @@ package_grub-theme-manjaro() {
 	install=manjaro-theme.install
     
     cd grub-theme/manjaro-live
-    sed -i -e 's,.*text = "Welcome to Manjaro".*,#text = "Welcome to Manjaro",' theme.txt #remove welcome message
+    sed -i -e 's,.*text = "Welcome to Manjaro".*,#text = "Welcome to instantOS",' theme.txt #remove welcome message
     find . -type f -exec install -D -m644 {} ${pkgdir}/usr/share/grub/themes/manjaro/{} \;
 }
 

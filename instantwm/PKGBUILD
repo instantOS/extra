@@ -1,0 +1,36 @@
+pkgname=instantwm
+_pkgname=instantwm-git
+pkgver=not_done_yet
+pkgrel=1
+pkgdesc="window manager for instantOS"
+url="https://github.com/instantos/instantwm"
+arch=('i686' 'x86_64')
+license=('MIT')
+options=(zipman)
+depends=('libx11' 'libxinerama' 'libxft')
+makedepends=('git')
+provides=('dwm')
+conflicts=('dwm')
+
+source=("$_pkgname::git+https://github.com/instantOS/instantWM.git")
+md5sums=("SKIP")
+
+pkgver() {
+  cd $_pkgname
+  echo "not_done_yet"
+}
+
+prepare() {
+  cd $_pkgname
+}
+
+build() {
+  cd $_pkgname
+  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+}
+
+package() {
+  cd $_pkgname
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
