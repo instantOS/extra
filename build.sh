@@ -8,9 +8,12 @@ manjaro"
 mkdir build
 
 buildclean() {
-    rm -rf src
-    rm -rf pkg
-    rm -rf $1*
+    if [ -e pkg ]; then
+        rm -rf src
+        rm -rf pkg
+        rm -rf "$1*"
+        rm -rf "*.pkg.tar.xz"
+    fi
 }
 
 cd instantwm
@@ -43,6 +46,11 @@ cd ..
 cd instantassist
 makepkg
 mv *.pkg.tar.xz ../build/instantassist.pkg.tar.xz
+cd ..
+
+cd instantwallpaper
+makepkg
+mv *.pkg.tar.xz ../build/instantwallpaper.pkg.tar.xz
 cd ..
 
 cd build
