@@ -32,6 +32,8 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
+    mkdir -p ${pkgdir}/usr/share/backgrounds
+    wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "https://raw.githubusercontent.com/instantOS/instantLOGO/master/wallpaper/defaultwall.png"
     chmod +x *.sh
     mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
 }
