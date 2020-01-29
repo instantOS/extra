@@ -25,36 +25,26 @@ bashbuild() {
     cd ..
 }
 
-cd instantwm
-for i in $THEMES; do
-    echo "$i" >/tmp/instanttheme
-    makepkg .
-    mv *.pkg.tar.xz ../build/instantwm-$i.pkg.tar.xz
-    buildclean 'instantwm-'
-done
-cd ..
+# c programs using instantos theming
+themebuild() {
+    cd $1
+    for i in $THEMES; do
+        echo "$i" >/tmp/instanttheme
+        makepkg .
+        mv *.pkg.tar.xz ../build/$1-$i.pkg.tar.xz
+        buildclean "$1-"
+    done
+    cd ..
+}
 
-cd instantmenu
-for i in $THEMES; do
-    echo "$i" >/tmp/instanttheme
-    makepkg .
-    mv *.pkg.tar.xz ../build/instantmenu-$i.pkg.tar.xz
-    buildclean 'instantmenu-'
-done
-cd ..
-
-cd instantlock
-for i in $THEMES; do
-    echo "$i" >/tmp/instanttheme
-    makepkg .
-    mv *.pkg.tar.xz ../build/instantlock-$i.pkg.tar.xz
-    buildclean 'instantlock-'
-done
-cd ..
+themebuild instantwm
+themebuild instantmenu
+themebuild instantlock
 
 bashbuild instantassist
 bashbuild instantwallpaper
 bashbuild instantutils
+bashbuild autojump
 
 cd build
 
