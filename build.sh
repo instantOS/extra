@@ -10,6 +10,7 @@ bashbuild instantassist
 bashbuild instantwallpaper
 bashbuild instantutils
 bashbuild autojump
+bashbuild wmutils
 
 cd build
 
