@@ -21,7 +21,11 @@ bashbuild() {
     [ -e "$1" ] || return
     cd "$1"
     makepkg
-    mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
+    if ls *.pkg.tar.xz | wc -l | grep -q '1'; then
+        mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
+    else
+        mv *.pkg.tar.xz ../build/
+    fi
     cd ..
 }
 
