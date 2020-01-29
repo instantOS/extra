@@ -1,7 +1,7 @@
 
 pkgbase=grub-theme-live
 pkgname=('grub-theme-live-common' 'grub-theme-live-instantos' 'grub-theme-instantos')
-_pkgname=grub-theme-live-common
+_pkgname=grub-theme
 pkgver=18.1
 pkgrel=1
 
