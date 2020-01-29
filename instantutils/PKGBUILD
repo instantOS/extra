@@ -34,6 +34,7 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/xsessions
     mv instantwm.desktop ${pkgdir}/usr/share/xsessions/
+    
     chmod +x *.sh
     mv ./autostart.sh ${pkgdir}/usr/bin/instantautostart
     cd programs
