@@ -1,16 +1,16 @@
-_pkgname=instantwallpaper
+_pkgname=instantutils
 pkgname=$_pkgname
 pkgver=notdoneyet
 pkgrel=1
-pkgdesc="wallpaper generator for instantOS"
-url="https://github.com/instantOS/instantwallpaper"
+pkgdesc="core utilities for instantOS"
+url="https://github.com/instantOS/instantos"
 arch=('i686' 'x86_64')
 license=('MIT')
 depends=('sh' 'libxinerama' 'libxft' 'feh')
 makedepends=('git')
 provides=(instantmenu)
 conflicts=(instantmenu)
-source=("$_pkgname::git+https://github.com/instantOS/instantWALLPAPER.git")
+source=("$_pkgname::git+https://github.com/instantOS/instantOS.git")
 
 sha256sums=('SKIP')
 
@@ -32,6 +32,11 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
+    mkdir -p ${pkgdir}/usr/share/xsessions
+    mv instantwm.desktop ${pkgdir}/usr/share/xsessions/
     chmod +x *.sh
-    mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
+    mv ./autostart.sh ${pkgdir}/usr/bin/instantautostart
+    cd programs
+    chmod +x ./*
+    mv ./* ${pkgdir}/usr/bin/
 }

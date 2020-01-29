@@ -16,6 +16,15 @@ buildclean() {
     fi
 }
 
+# build a simple bash script package
+bashbuild() {
+    [ -e "$1" ] || return
+    cd "$1"
+    makepkg
+    mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
+    cd ..
+}
+
 cd instantwm
 for i in $THEMES; do
     echo "$i" >/tmp/instanttheme
@@ -43,16 +52,15 @@ for i in $THEMES; do
 done
 cd ..
 
-cd instantassist
-makepkg
-mv *.pkg.tar.xz ../build/instantassist.pkg.tar.xz
-cd ..
-
-cd instantwallpaper
-makepkg
-mv *.pkg.tar.xz ../build/instantwallpaper.pkg.tar.xz
-cd ..
+bashbuild instantassist
+bashbuild instantwallpaper
+bashbuild instantutils
 
 cd build
+
+if ! [ -e panther_launcher.pkg.tar.xz ]; then
+    wget -q -O panther_launcher.pkg.tar.xz "https://www.rastersoft.com/descargas/panther_launcher/panther_launcher-1.12.0-1-x86_64.pkg.tar.xz"
+fi
+
 repo-add instant.db.tar.xz ./*.pkg.tar.xz
 apindex .
