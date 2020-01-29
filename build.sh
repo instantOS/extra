@@ -1,5 +1,9 @@
 #!/bin/bash
+############################################################
+## build all instantos packages to recreate a full mirror ##
+############################################################
 
+# build functions
 source utils.sh
 
 themebuild instantwm
@@ -11,6 +15,8 @@ bashbuild instantwallpaper
 bashbuild instantutils
 bashbuild autojump
 bashbuild wmutils
+bashbuild xdragon
+bashbuild grub-theme-live
 
 cd build
 
