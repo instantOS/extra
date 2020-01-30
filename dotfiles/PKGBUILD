@@ -32,6 +32,7 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/instantdotfiles
+    rm -rf .git
     chmod +x *.sh
     chmod +x fonts/*.sh
     chmod +x instantdotfiles
