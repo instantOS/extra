@@ -39,6 +39,7 @@ package() {
     chmod +x installinstantos
     mv ./installinstantos ${pkgdir}/usr/bin/installinstantos
     mv ./autostart.sh ${pkgdir}/usr/bin/instantautostart
+    mv ./status.sh ${pkgdir}/usr/bin/instantstatus
     mv ./monitor.sh ${pkgdir}/usr/bin/instantmonitor
     cd programs
     chmod +x ./*

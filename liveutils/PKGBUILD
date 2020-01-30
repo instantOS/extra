@@ -1,0 +1,39 @@
+_pkgname=liveutils
+pkgname=$_pkgname
+pkgver=notdoneyet
+pkgrel=1
+pkgdesc="installation media utilities for instantOS"
+url="https://github.com/instantOS/liveutils"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('sh' 'libxinerama' 'libxft' 'feh')
+makedepends=('git')
+provides=(liveutils)
+conflicts=(liveutils)
+source=("$_pkgname::git+https://github.com/instantOS/liveutils.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "notdoneyet"
+}
+
+prepare() {
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/bin
+    mkdir -p ${pkgdir}/usr/share/liveutils
+    chmod +x *.py
+    mv installapplet.py ${pkgdir}/usr/bin/installapplet
+    mv wallpaper.png ${pkgdir}/usr/share/liveutils/
+}

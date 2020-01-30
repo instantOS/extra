@@ -18,6 +18,7 @@ bashbuild wmutils
 bashbuild xdragon
 bashbuild grub-theme-live
 bashbuild instantdotfiles
+bashbuild liveutils
 
 cd build
 
