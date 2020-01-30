@@ -17,6 +17,7 @@ bashbuild autojump
 bashbuild wmutils
 bashbuild xdragon
 bashbuild grub-theme-live
+bashbuild instantdotfiles
 
 cd build
 

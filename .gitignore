@@ -12,4 +12,4 @@ autojump/*.tar.gz
 grub-theme-live/grub-theme*
 instantutils/instantutils
 xdragon/dragon
-dotfiles/instantdotfiles
+instantdotfiles/instantdotfiles
