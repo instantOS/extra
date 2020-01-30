@@ -1,0 +1,44 @@
+_pkgname=instantdotfiles
+pkgname=$_pkgname
+pkgver=notdoneyet
+pkgrel=1
+pkgdesc="dotfiles for instantOS"
+url="https://github.com/paperbenni/dotfiles"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('sh' 'ranger' 'bash' 'git' 'wget')
+makedepends=('git')
+provides=(instantdotfiles)
+conflicts=(instantdotfiles)
+source=("$_pkgname::git+https://github.com/paperbenni/dotfiles.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "notdoneyet"
+}
+
+prepare() {
+    cd $_pkgname
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/bin
+    mkdir -p ${pkgdir}/usr/share/instantdotfiles
+    chmod +x *.sh
+    chmod +x fonts/*.sh
+    chmod +x instantdotfiles
+    chmod +x ranger/commands.py
+
+    mv instantdotfiles ${pkgdir}/usr/bin/instantdotfiles
+
+    mv ./* ${pkgdir}/usr/share/instantdotfiles/
+
+}
