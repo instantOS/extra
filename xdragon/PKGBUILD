@@ -12,7 +12,7 @@ license=('GPL3')
 depends=('gtk3')
 makedepends=('git')
 provides=('xdragon')
-conflicts=('dragon-drag-and-drop' 'xdragon')
+conflicts=('dragon-drag-and-drop' 'xdragon' 'dragon')
 source=("$_pkgname::git+https://github.com/mwh/dragon")
 sha256sums=('SKIP')
 

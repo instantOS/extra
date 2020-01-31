@@ -9,7 +9,7 @@ license=('MIT')
 depends=('sh' 'libxinerama' 'libxft' 'feh')
 makedepends=('git')
 provides=(instantmenu)
-conflicts=(instantmenu)
+conflicts=(instantwallpaper)
 source=("$_pkgname::git+https://github.com/instantOS/instantWALLPAPER.git")
 
 sha256sums=('SKIP')
