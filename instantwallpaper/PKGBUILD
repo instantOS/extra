@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 license=('MIT')
 depends=('sh' 'libxinerama' 'libxft' 'feh')
 makedepends=('git')
-provides=(instantmenu)
+provides=(instantwallpaper)
 conflicts=(instantwallpaper)
 source=("$_pkgname::git+https://github.com/instantOS/instantWALLPAPER.git")
 
