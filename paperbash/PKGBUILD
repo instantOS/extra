@@ -1,6 +1,6 @@
 _pkgname=paperbash
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=d400d26
 pkgrel=1
 pkgdesc="it's like pip but bash and a little shitty"
 url="https://github.com/paperbenni/bash"
@@ -33,7 +33,6 @@ build() {
 
 package() {
     cd $_pkgname
-    mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/paperbash
     chmod +x *.sh
     mv ./* ${pkgdir}/usr/share/paperbash/
