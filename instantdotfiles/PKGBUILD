@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 
 pkgver() {
     cd $_pkgname
-    echo "notdoneyet"
+    git rev-parse --short HEAD
 }
 
 prepare() {

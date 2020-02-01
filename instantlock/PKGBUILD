@@ -22,7 +22,8 @@ provides=("${_pkgname}" "instantlock")
 conflicts=("${_pkgname}" "instantlock")
 
 pkgver() {
-    echo "notdoneyet"
+    cd $_pkgname
+    git rev-parse --short HEAD
 }
 
 prepare() {
