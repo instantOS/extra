@@ -1,0 +1,26 @@
+post_install() {
+
+    if ! grep -q 'pb()' /etc/bash.bashrc; then
+        cd /etc
+        cp bash.bashrc bash2.bashrc
+        cat /usr/share/paperbash >>bash.bashrc
+        cat bash2.bashrc >>bash.bashrc
+        rm bash2.bashrc
+    fi
+
+}
+
+post_upgrade() {
+    post_install
+}
+
+post_remove() {
+    RMBEGIN=${2:-\#paperbegin}
+    RMEND=${3:-\#paperend}
+    if grep "$RMBEGIN" <"$1" && grep "$RMEND" <"$1"; then
+        sed -i "/$RMBEGIN/,/$RMEND/d" "$1"
+    else
+        echo "markers not found"
+        return 1
+    fi
+}

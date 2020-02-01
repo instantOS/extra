@@ -1,0 +1,40 @@
+_pkgname=paperbash
+pkgname=$_pkgname
+pkgver=9851542
+pkgrel=1
+pkgdesc="it's like pip but bash and a little shitty"
+url="https://github.com/paperbenni/bash"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('sh' 'bash')
+makedepends=('git' 'curl')
+provides=(paperbash)
+conflicts=(paperbash)
+source=("$_pkgname::git+https://github.com/paperbenni/bash.git")
+
+sha256sums=('SKIP')
+
+install=paperbash.install
+
+pkgver() {
+    cd $_pkgname
+    git rev-parse --short HEAD
+}
+
+prepare() {
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/bin
+    mkdir -p ${pkgdir}/usr/share/paperbash
+    chmod +x *.sh
+    mv ./* ${pkgdir}/usr/share/paperbash/
+}
