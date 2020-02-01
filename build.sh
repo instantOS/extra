@@ -20,6 +20,10 @@ bashbuild grub-theme-live
 bashbuild instantdotfiles
 bashbuild liveutils
 
+aurbuild wmutils-git wmutils
+aurbuild libinput-gestures
+aurbuild autojump
+
 cd build
 
 if ! [ -e panther_launcher.pkg.tar.xz ]; then

@@ -33,7 +33,9 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/xsessions
+    cp instantwm.desktop default.desktop
     mv instantwm.desktop ${pkgdir}/usr/share/xsessions/
+    mv default.desktop ${pkgdir}/usr/share/xsessions/
 
     chmod +x *.sh
     chmod +x installinstantos

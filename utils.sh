@@ -40,3 +40,19 @@ themebuild() {
     done
     cd ..
 }
+
+aurbuild() {
+    git clone --depth=1 "https://aur.archlinux.org/$1.git" || return 1
+    cd $1
+    if [ -n "$2" ]; then
+        sed -i 's/^pkgname=.*/pkgname='"$2"'/g' PKGBUILD
+    fi
+    makepkg
+    if ls *.pkg.tar.xz | wc -l | grep -q '1'; then
+        mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
+    else
+        mv *.pkg.tar.xz ../build/
+    fi
+    cd ..
+    rm -rf $1
+}
