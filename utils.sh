@@ -56,3 +56,21 @@ aurbuild() {
     cd ..
     rm -rf $1
 }
+
+linkbuild() {
+    if ! $(pwd) | grep -q 'build'; then
+        if [ -e build ]; then
+            cd build
+            TEMPBUILD="true"
+        fi
+    fi
+
+    if ! [ -e $1.pkg.tar.xz ]; then
+        wget -q -O $1.pkg.tar.xz "$2"
+    fi
+
+    if [ -n "$TEMPBUILD" ]; then
+        unset TEMPBUILD
+        cd ..
+    fi
+}

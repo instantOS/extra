@@ -13,8 +13,6 @@ themebuild instantlock
 bashbuild instantassist
 bashbuild instantwallpaper
 bashbuild instantutils
-bashbuild autojump
-bashbuild wmutils
 bashbuild xdragon
 bashbuild grub-theme-live
 bashbuild instantdotfiles
@@ -23,12 +21,11 @@ bashbuild liveutils
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
 aurbuild autojump
+aurbuild libwm-git
 
 cd build
 
-if ! [ -e panther_launcher.pkg.tar.xz ]; then
-    wget -q -O panther_launcher.pkg.tar.xz "https://www.rastersoft.com/descargas/panther_launcher/panther_launcher-1.12.0-1-x86_64.pkg.tar.xz"
-fi
+linkbuild panther_launcher https://www.rastersoft.com/descargas/panther_launcher/panther_launcher-1.12.0-1-x86_64.pkg.tar.xz
 
 repo-add instant.db.tar.xz ./*.pkg.tar.xz
 apindex .
