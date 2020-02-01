@@ -17,6 +17,7 @@ bashbuild xdragon
 bashbuild grub-theme-live
 bashbuild instantdotfiles
 bashbuild liveutils
+bashbuild paperbash
 
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
