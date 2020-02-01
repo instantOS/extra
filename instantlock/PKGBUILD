@@ -7,7 +7,7 @@ fi
 
 pkgname=instantlock-$THEME
 _pkgname=$pkgname
-pkgver=notdoneyet
+pkgver=f6e2bb5
 pkgrel=1
 pkgdesc='lock screen for instantOS'
 url='https://github.com/instantOS/instantLOCK.git'

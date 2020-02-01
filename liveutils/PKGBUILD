@@ -1,6 +1,6 @@
 _pkgname=liveutils
 pkgname=$_pkgname
-pkgver=notdoneyet
+pkgver=9851542
 pkgrel=1
 pkgdesc="installation media utilities for instantOS"
 url="https://github.com/instantOS/liveutils"

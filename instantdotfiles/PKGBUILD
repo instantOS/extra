@@ -1,6 +1,6 @@
 _pkgname=instantdotfiles
 pkgname=$_pkgname
-pkgver=notdoneyet
+pkgver=e946d28
 pkgrel=1
 pkgdesc="dotfiles for instantOS"
 url="https://github.com/paperbenni/dotfiles"
