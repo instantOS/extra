@@ -18,6 +18,7 @@ bashbuild grub-theme-live
 bashbuild instantdotfiles
 bashbuild liveutils
 bashbuild paperbash
+bashbuild instantthemes
 
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
