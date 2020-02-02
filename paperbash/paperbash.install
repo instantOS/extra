@@ -2,7 +2,7 @@ post_install() {
 
     if ! grep -q 'pb()' /etc/profile; then
         echo "adding pb to global bashrc"
-        cat /usr/share/paperbash/localfunction.sh >>/etc/profile
+        cat /usr/share/paperbash/localfunction.sh >>/etc/bash.bashrc
     fi
 
 }
@@ -12,8 +12,8 @@ post_upgrade() {
 }
 
 post_remove() {
-    if grep "# paperbegin" "$1" && grep "# paperend" /etc/profile; then
-        sed -i "/# paperbegin/,/# paperend/d" /etc/profile
+    if grep "# paperbegin" "$1" && grep "# paperend" /etc/bash.bashrc; then
+        sed -i "/# paperbegin/,/# paperend/d" /etc/bash.bashrc
     else
         echo "markers not found"
         return 1
