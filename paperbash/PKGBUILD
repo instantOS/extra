@@ -18,7 +18,7 @@ install=paperbash.install
 
 pkgver() {
     cd $_pkgname
-    git rev-parse --short HEAD
+    echo "$(date '+%Y%M%d')$(git rev-parse --short HEAD)"
 }
 
 prepare() {
