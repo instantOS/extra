@@ -32,7 +32,11 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantthemes
+    mkdir -p ${pkgdir}/usr/bin
+
     chmod +x *.sh
+    chmod +x instantthemes
+    mv instantthemes ${pkgdir}/usr/bin
     rm README.md
     mv ./* ${pkgdir}/usr/share/instantthemes/
 }
