@@ -1,6 +1,6 @@
 _pkgname=instantwallpaper
 pkgname=$_pkgname
-pkgver=notdoneyet
+pkgver=202025064f2ad18
 pkgrel=1
 pkgdesc="wallpaper generator for instantOS"
 url="https://github.com/instantOS/instantwallpaper"
@@ -34,8 +34,10 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/backgrounds
+    mkdir -p ${pkgdir}/usr/share/instantwallpaper
+
     wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$RAW/wallpaper/defaultwall.png"
-    wget -qO ${pkgdir}/usr/share/backgrounds/defaultphoto.png "$RAW/wallpaper/defaultphoto.png"
+    wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$RAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
     mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
 }
