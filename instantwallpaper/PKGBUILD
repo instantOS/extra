@@ -30,11 +30,12 @@ build() {
 }
 
 package() {
+    RAW="https://raw.githubusercontent.com/instantOS/instantLOGO/master"
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/backgrounds
-    wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "https://raw.githubusercontent.com/instantOS/instantLOGO/master/wallpaper/defaultwall.png"
-    wget -qO ${pkgdir}/usr/share/backgrounds/defaultphoto.png "https://raw.githubusercontent.com/instantOS/instantLOGO/master/wallpaper/defaultphoto.jpg"
+    wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$RAW/wallpaper/defaultwall.png"
+    wget -qO ${pkgdir}/usr/share/backgrounds/defaultphoto.png "$RAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
     mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
 }
