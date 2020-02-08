@@ -1,6 +1,6 @@
 _pkgname=instantthemes
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=20204208429760e
 pkgrel=1
 pkgdesc="theme files for instantOS"
 url="https://github.com/instantOS/instantTHEMES"

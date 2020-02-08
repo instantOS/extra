@@ -17,5 +17,6 @@ instantdotfiles/instantdotfiles
 liveutils/liveutils
 paperbash/paperbash
 instantthemes/instantthemes
+instantwidgets/instantwidgets
 # Local Netlify folder
 .netlify
