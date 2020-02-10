@@ -20,6 +20,7 @@ bashbuild liveutils
 bashbuild paperbash
 bashbuild instantthemes
 bashbuild instantwidgets
+bashbuild instantcursors
 
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures

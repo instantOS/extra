@@ -18,5 +18,7 @@ liveutils/liveutils
 paperbash/paperbash
 instantthemes/instantthemes
 instantwidgets/instantwidgets
+instantcursors/instantcursors
+
 # Local Netlify folder
 .netlify
