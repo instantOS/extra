@@ -2,6 +2,8 @@
 */pkg
 */*-git
 */*.pkg.tar.xz
+*/*.tar.xz
+
 build
 build/*
 instantmenu/instantmenu-*
