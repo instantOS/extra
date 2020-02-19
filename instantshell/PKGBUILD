@@ -35,8 +35,12 @@ package() {
     mkdir -p ${pkgdir}/usr/share/instantshell
     mkdir -p ${pkgdir}/usr/bin
 
+    cat zshrc >>./ohmyzsh/templates/zshrc.zsh-template
+    rm zshrc
+
     chmod +x install.sh
 
+    mv instantos.plugin.zsh ./ohmyzsh/plugins/
     mv install.sh ${pkgdir}/usr/bin/instantshell
     mv ohmyzsh/* ${pkgdir}/usr/share/instantshell
 }
