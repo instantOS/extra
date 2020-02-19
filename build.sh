@@ -21,6 +21,7 @@ bashbuild paperbash
 bashbuild instantthemes
 bashbuild instantwidgets
 bashbuild instantcursors
+bashbuild instantshell
 
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
