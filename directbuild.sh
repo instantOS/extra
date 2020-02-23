@@ -7,4 +7,10 @@ git clone --depth=1 https://github.com/instantos/extra.git
 cd extra
 ./build.sh
 cd build
-surge . instantos.surge.sh
+
+if [ -e index.html ]; then
+    surge . instantos.surge.sh
+else
+    echo "repo build failed"
+    exit 1
+fi
