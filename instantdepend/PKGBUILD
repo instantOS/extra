@@ -59,6 +59,7 @@ depends=('picom'
     'panther_launcher'
     'autojump'
     'paperbash'
+    'zsh-syntax-highlighting'
     'instantos')
 
 makedepends=('bash')
