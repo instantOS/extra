@@ -1,6 +1,6 @@
 _pkgname=instantdepend
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=20204923be4c9bc
 pkgrel=1
 pkgdesc="meta package for instantOS dependencies"
 url="https://github.com/instantOS/instantMETA"
@@ -52,14 +52,7 @@ depends=('picom'
     'cpio'
     'pavucontrol'
     'zsh'
-    'qt5-styleplugins'
-    'yay'
-    'wmutils'
-    'xdragon'
-    'panther_launcher'
-    'autojump'
-    'paperbash'
-    'zsh-syntax-highlighting')
+    'qt5-styleplugins')
 
 makedepends=('bash')
 provides=(instantdepend)
@@ -84,6 +77,14 @@ build() {
 }
 
 package() {
+    depends+=('yay'
+        'wmutils'
+        'xdragon'
+        'panther_launcher'
+        'autojump'
+        'paperbash'
+        'zsh-syntax-highlighting')
+
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
     echo 'instantdependpackages' >${pkgdir}/usr/share/instantos/dpackages

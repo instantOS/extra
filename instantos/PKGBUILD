@@ -6,17 +6,7 @@ pkgdesc="meta package for instantOS"
 url="https://github.com/instantOS/instantMETA"
 arch=('i686' 'x86_64')
 license=('MIT')
-depends=('instantdotfiles'
-    'instantutils'
-    'instantwallpaper'
-    'instantassist'
-    'instantthemes'
-    'instantwidgets'
-    'instantcursors'
-    'instantshell'
-    'instantwm-arc'
-    'instantlock-arc'
-    'instantmenu-arc')
+depends=('git')
 
 makedepends=('bash')
 provides=(instantos)
@@ -41,7 +31,21 @@ build() {
 }
 
 package() {
+
+    depends+=('instantdotfiles'
+        'instantutils'
+        'instantwallpaper'
+        'instantassist'
+        'instantthemes'
+        'instantwidgets'
+        'instantcursors'
+        'instantshell'
+        'instantwm-arc'
+        'instantlock-arc'
+        'instantmenu-arc')
+        
     cd $_pkgname
+
     mkdir -p ${pkgdir}/usr/share/instantos
     echo 'instantpackages' >${pkgdir}/usr/share/instantos/packages
 }
