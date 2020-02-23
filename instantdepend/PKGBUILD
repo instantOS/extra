@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 license=('MIT')
 depends=('picom'
     'arc-gtk-theme'
-    '>extra xorg-xrandr'
+    'xorg-xrandr'
     'slop'
     'xorg-xsetroot'
     'xorg-fonts-misc'
@@ -59,8 +59,7 @@ depends=('picom'
     'panther_launcher'
     'autojump'
     'paperbash'
-    'zsh-syntax-highlighting'
-    'instantos')
+    'zsh-syntax-highlighting')
 
 makedepends=('bash')
 provides=(instantdepend)
