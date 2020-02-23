@@ -32,10 +32,10 @@ bashbuild instantos
 bashbuild instantdepend
 
 # aur packages
+aurbuild libwm-git
 aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
 aurbuild autojump
-aurbuild libwm-git
 
 cd build
 
