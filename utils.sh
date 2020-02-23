@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#####################################################
+## utilities for building an instantOS repo mirror ##
+#####################################################
+
 THEMES="dracula
 mac
 arc
@@ -7,16 +12,18 @@ manjaro"
 [ -e build ] && rm -rf build
 mkdir build
 
+# exit if failed build detected
 checkmake() {
-    if makepkg && ls *.pkg.tar.xz; then
+    if makepkg && ls *.pkg.tar.xz &>/dev/null; then
         echo "build successful"
     else
-        echo "build failed"
+        echo "build failed at $(pwd)"
         exit 1
     fi
 
 }
 
+# remove all build files from directory
 buildclean() {
     if [ -e pkg ]; then
         rm -rf src
@@ -54,6 +61,7 @@ themebuild() {
     cd ..
 }
 
+# build a program from the AUR
 aurbuild() {
     git clone --depth=1 "https://aur.archlinux.org/$1.git" || return 1
     cd $1
@@ -70,6 +78,7 @@ aurbuild() {
     rm -rf $1
 }
 
+# put a binary from the web in the repo
 linkbuild() {
     if ! $(pwd) | grep -q 'build'; then
         if [ -e build ]; then
