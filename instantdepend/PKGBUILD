@@ -47,7 +47,6 @@ depends=('picom'
     'xdotool'
     'wmctrl'
     'xclip'
-    'youtube-dl'
     'nautilus'
     'cpio'
     'pavucontrol'
@@ -82,6 +81,7 @@ package() {
         'xdragon'
         'panther_launcher'
         'autojump'
+        'youtube-dl'
         'paperbash'
         'zsh-syntax-highlighting')
 
