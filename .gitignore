@@ -22,5 +22,7 @@ instantthemes/instantthemes
 instantwidgets/instantwidgets
 instantcursors/instantcursors
 instantshell/instantshell
+instantos/instantos
+instantdepend/instantdepend
 # Local Netlify folder
 .netlify

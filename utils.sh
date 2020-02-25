@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#####################################################
+## utilities for building an instantOS repo mirror ##
+#####################################################
+
 THEMES="dracula
 mac
 arc
@@ -7,6 +12,18 @@ manjaro"
 [ -e build ] && rm -rf build
 mkdir build
 
+# exit if failed build detected
+checkmake() {
+    if makepkg && ls *.pkg.tar.xz &>/dev/null; then
+        echo "build successful"
+    else
+        echo "build failed at $(pwd)"
+        exit 1
+    fi
+
+}
+
+# remove all build files from directory
 buildclean() {
     if [ -e pkg ]; then
         rm -rf src
@@ -18,9 +35,12 @@ buildclean() {
 
 # build a simple bash script package
 bashbuild() {
+    echo "bashbuilding $1"
     [ -e "$1" ] || return
     cd "$1"
-    makepkg
+
+    checkmake
+
     if ls *.pkg.tar.xz | wc -l | grep -q '1'; then
         mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
     else
@@ -34,20 +54,21 @@ themebuild() {
     cd $1
     for i in $THEMES; do
         echo "$i" >/tmp/instanttheme
-        makepkg .
+        checkmake
         mv *.pkg.tar.xz ../build/$1-$i.pkg.tar.xz
         buildclean "$1-"
     done
     cd ..
 }
 
+# build a program from the AUR
 aurbuild() {
     git clone --depth=1 "https://aur.archlinux.org/$1.git" || return 1
     cd $1
     if [ -n "$2" ]; then
         sed -i 's/^pkgname=.*/pkgname='"$2"'/g' PKGBUILD
     fi
-    makepkg
+    checkmake
     if ls *.pkg.tar.xz | wc -l | grep -q '1'; then
         mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
     else
@@ -57,6 +78,7 @@ aurbuild() {
     rm -rf $1
 }
 
+# put a binary from the web in the repo
 linkbuild() {
     if ! $(pwd) | grep -q 'build'; then
         if [ -e build ]; then
