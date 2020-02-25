@@ -35,7 +35,8 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/backgrounds
     mkdir -p ${pkgdir}/usr/share/instantwallpaper
-
+    
+    mv wallutils.sh ${pkgdir}/usr/share/instantwallpaper
     wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$RAW/wallpaper/defaultwall.png"
     wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$RAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
