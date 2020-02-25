@@ -6,6 +6,10 @@ echo "starting instantOS repo build"
 # build functions
 source utils.sh
 
+if ! pacman -Qi paperbash &>/dev/null; then
+    echo "please install paperbash and libwm-git"
+fi
+
 # themable instantOS packages
 themebuild instantwm
 themebuild instantmenu
