@@ -51,7 +51,8 @@ depends=('picom'
     'cpio'
     'pavucontrol'
     'zsh'
-    'qt5-styleplugins')
+    'qt5-styleplugins'
+    'zenity')
 
 makedepends=('bash')
 provides=(instantdepend)
