@@ -1,0 +1,38 @@
+_pkgname=instantfonts
+pkgname=$_pkgname
+pkgver=20204208429760e
+pkgrel=1
+pkgdesc="patched fonts for instantOS"
+arch=(any)
+license=('MIT')
+depends=('sh')
+makedepends=('wget')
+provides=(instantfonts)
+conflicts=(instantfonts)
+
+sha256sums=('SKIP')
+
+pkgver() {
+    echo "$(date '+%Y%M%d')"
+}
+
+prepare() {
+    mkdir -p $_pkgname
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    wget "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf"
+    wget "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf"
+
+}
+
+package() {
+    cd $_pkgname
+    bash fetch.sh
+    mkdir -p ${pkgdir}/usr/share/fonts/instantfonts
+    chmod 644 *.ttf
+    mv *.ttf ${pkgdir}/usr/share/fonts/instantfonts/
+}
