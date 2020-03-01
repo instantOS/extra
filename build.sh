@@ -30,6 +30,7 @@ bashbuild instantthemes
 bashbuild instantwidgets
 bashbuild instantcursors
 bashbuild instantshell
+bashbuild instantfonts
 
 # meta packages
 bashbuild instantos
