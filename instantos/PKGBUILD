@@ -40,10 +40,11 @@ package() {
         'instantwidgets'
         'instantcursors'
         'instantshell'
+        'instantfonts'
         'instantwm-arc'
         'instantlock-arc'
         'instantmenu-arc')
-        
+
     cd $_pkgname
 
     mkdir -p ${pkgdir}/usr/share/instantos
