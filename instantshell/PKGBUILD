@@ -40,7 +40,10 @@ package() {
 
     chmod +x install.sh
     mkdir -p ./ohmyzsh/plugins/instantos
+    mkdir -p ./ohmyzsh/themes
+    mv instantos.zsh-theme ./ohmyzsh/themes/
     mv instantos.plugin.zsh ./ohmyzsh/plugins/instantos/
+
     mv install.sh ${pkgdir}/usr/bin/instantshell
     mv ohmyzsh/* ${pkgdir}/usr/share/instantshell
 }

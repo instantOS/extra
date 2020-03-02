@@ -53,7 +53,8 @@ depends=('picom'
     'zsh'
     'qt5-styleplugins'
     'zenity'
-    'jgmenu')
+    'jgmenu'
+    'jq')
 
 makedepends=('bash')
 provides=(instantdepend)
