@@ -21,6 +21,7 @@ bashbuild xdragon
 bashbuild instantdotfiles
 bashbuild liveutils
 bashbuild paperbash
+bashbuild rangerplugins
 
 # instantOS exclusive packages
 bashbuild instantassist
@@ -42,6 +43,7 @@ aurbuild wmutils-git wmutils
 aurbuild libinput-gestures
 aurbuild autojump
 aurbuild urxvt-resize-font-git
+aurbuild rxvt-unicode-pixbuf
 
 cd build
 

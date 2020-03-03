@@ -24,5 +24,6 @@ instantcursors/instantcursors
 instantshell/instantshell
 instantos/instantos
 instantdepend/instantdepend
+rangerplugins/rangerplugins
 # Local Netlify folder
 .netlify
