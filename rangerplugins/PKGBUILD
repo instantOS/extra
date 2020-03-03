@@ -1,6 +1,6 @@
 _pkgname=rangerplugins
 pkgname=$_pkgname
-pkgver=20205803
+pkgver=20200904
 pkgrel=1
 pkgdesc="plugins for ranger file manager"
 url="https://github.com/ranger/ranger.git"
@@ -24,16 +24,22 @@ build() {
 }
 
 package() {
+    rm -rf rangerplugins
+
     mkdir rangerplugins
     cd rangerplugins
 
     mkdir -p ${pkgdir}/usr/share/rangerplugins
 
     installplugin() {
+        GITREPO=${1#*/}
+        echo "installing $GITREPO"
         git clone --depth=1 https://github.com/"$1".git
-        mv "$1"/*.py .
-        rm -rf "$1"/*
-        mv *.py "$1"/
+        mv "$GITREPO"/*.py .
+        rm -rf "$GITREPO"/*
+        rm -rf "$GITREPO"/.git
+        rm -rf "$GITREPO"/.gitignore
+        mv *.py "$GITREPO"/
     }
 
     installplugin alexanderjeurissen/ranger_devicons
