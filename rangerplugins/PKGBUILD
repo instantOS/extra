@@ -1,6 +1,6 @@
 _pkgname=rangerplugins
 pkgname=$_pkgname
-pkgver=d400d26
+pkgver=20205803
 pkgrel=1
 pkgdesc="plugins for ranger file manager"
 url="https://github.com/ranger/ranger.git"
@@ -16,7 +16,6 @@ pkgver() {
 }
 
 prepare() {
-    cd $_pkgname
     echo "no prepare"
 }
 
@@ -30,10 +29,15 @@ package() {
 
     mkdir -p ${pkgdir}/usr/share/rangerplugins
 
-    git clone --depth=1 https://github.com/alexanderjeurissen/ranger_devicons
-    rm -rf ./ranger_devicons/.git
-    git clone --depth=1 https://github.com/laggardkernel/ranger-fzf-marks.git
-    rm -rf ./ranger-fzf-marks/.git
+    installplugin() {
+        git clone --depth=1 https://github.com/"$1".git
+        mv "$1"/*.py .
+        rm -rf "$1"/*
+        mv *.py "$1"/
+    }
+
+    installplugin alexanderjeurissen/ranger_devicons
+    installplugin laggardkernel/ranger-fzf-marks
 
     mv ./* ${pkgdir}/usr/share/rangerplugins/
 }
