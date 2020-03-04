@@ -38,12 +38,14 @@ package() {
     cat zshrc >>./ohmyzsh/templates/zshrc.zsh-template
     rm zshrc
 
-    chmod +x install.sh
-    mkdir -p ./ohmyzsh/plugins/instantos
-    mkdir -p ./ohmyzsh/themes
-    mv instantos.zsh-theme ./ohmyzsh/themes/
-    mv instantos.plugin.zsh ./ohmyzsh/plugins/instantos/
+    mkdir -p ./ohmyzsh/custom/plugins/instantos
+    mv instantos.plugin.zsh ./ohmyzsh/custom/plugins/instantos/
 
+    mkdir -p ./ohmyzsh/custom/themes
+    mv instantos.zsh-theme ./ohmyzsh/custom/themes/
+
+    chmod +x install.sh
     mv install.sh ${pkgdir}/usr/bin/instantshell
+
     mv ohmyzsh/* ${pkgdir}/usr/share/instantshell
 }
