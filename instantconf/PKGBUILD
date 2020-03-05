@@ -1,0 +1,38 @@
+_pkgname=instantconf
+pkgname=$_pkgname
+pkgver=9851542
+pkgrel=1
+pkgdesc="simple config system for instantOS"
+url="https://github.com/instantOS/instantconf"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('sqlite')
+makedepends=('git')
+provides=(instantconf)
+conflicts=(instantconf)
+source=("$_pkgname::git+https://github.com/instantOS/instantconf.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%M%d')$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/bin
+    chmod +x instantconf
+    mv instantconf ${pkgdir}/usr/bin/instantconf
+    ln -s ${pkgdir}/usr/bin/instantconf ${pkgdir}/usr/bin/iconf
+}

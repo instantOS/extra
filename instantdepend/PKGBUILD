@@ -43,7 +43,6 @@ depends=('picom'
     'rofi'
     'conky'
     'dunst'
-    'rxvt-unicode'
     'xdotool'
     'wmctrl'
     'xclip'
@@ -54,7 +53,8 @@ depends=('picom'
     'qt5-styleplugins'
     'zenity'
     'jgmenu'
-    'jq')
+    'jq'
+    'htop')
 
 makedepends=('bash')
 provides=(instantdepend)
@@ -87,7 +87,8 @@ package() {
         'autojump'
         'youtube-dl'
         'paperbash'
-        'zsh-syntax-highlighting')
+        'zsh-syntax-highlighting'
+        'rxvt-unicode-pixbuf')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos

@@ -32,6 +32,7 @@ bashbuild instantwidgets
 bashbuild instantcursors
 bashbuild instantshell
 bashbuild instantfonts
+bashbuild instantconf
 
 # meta packages
 bashbuild instantos
