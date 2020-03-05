@@ -33,6 +33,7 @@ bashbuild instantcursors
 bashbuild instantshell
 bashbuild instantfonts
 bashbuild instantconf
+bashbuild instantwelcome
 
 # meta packages
 bashbuild instantos

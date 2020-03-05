@@ -44,7 +44,8 @@ package() {
         'instantconf'
         'instantwm-arc'
         'instantlock-arc'
-        'instantmenu-arc')
+        'instantmenu-arc'
+        'instantwelcome')
 
     cd $_pkgname
 
