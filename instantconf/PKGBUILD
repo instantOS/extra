@@ -34,5 +34,5 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     chmod +x instantconf
     mv instantconf ${pkgdir}/usr/bin/instantconf
-    ln -s ${pkgdir}/usr/bin/instantconf ${pkgdir}/usr/bin/iconf
+    ln -s /usr/bin/instantconf ${pkgdir}/usr/bin/iconf
 }
