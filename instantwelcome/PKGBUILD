@@ -1,6 +1,6 @@
 _pkgname=instantwelcome
 pkgname=$_pkgname
-pkgver=2020370854bee06
+pkgver=20200508f73ecb0
 pkgrel=1
 pkgdesc="welcome app instantOS"
 url="https://github.com/instantOS/instantWELCOME"
@@ -33,6 +33,11 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/instantwelcome
+
+    mkdir -p "$pkgdir/usr/share/applications/"
+    chmod 644 *.desktop
+    mv *.desktop "$pkgdir/usr/share/applications/"
+
     chmod +x *.py
     chmod +x *.sh
     mv welcome.sh ${pkgdir}/usr/bin/instantwelcome

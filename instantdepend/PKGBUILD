@@ -54,7 +54,8 @@ depends=('picom'
     'zenity'
     'jgmenu'
     'jq'
-    'htop')
+    'htop'
+    'pa-applet')
 
 makedepends=('bash')
 provides=(instantdepend)

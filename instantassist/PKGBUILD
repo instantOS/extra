@@ -30,6 +30,9 @@ build() {
 
 package() {
     cd $_pkgname
+    mkdir -p "$pkgdir/usr/share/applications/"
+    chmod 644 *.desktop
+    mv *.desktop "$pkgdir/usr/share/applications/"
     export ASSISTPREFIX="$pkgdir"
     echo "$pkgdir"
     ./install.sh
