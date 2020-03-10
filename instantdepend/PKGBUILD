@@ -90,7 +90,8 @@ package() {
         'youtube-dl'
         'paperbash'
         'zsh-syntax-highlighting'
-        'rxvt-unicode-pixbuf')
+        'rxvt-unicode-pixbuf'
+        'rangerplugins')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
