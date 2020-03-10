@@ -1,6 +1,6 @@
 _pkgname=instantwelcome
 pkgname=$_pkgname
-pkgver=20200508f73ecb0
+pkgver=20202610d52be7a
 pkgrel=1
 pkgdesc="welcome app instantOS"
 url="https://github.com/instantOS/instantWELCOME"

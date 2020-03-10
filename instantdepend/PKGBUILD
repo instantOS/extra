@@ -55,7 +55,8 @@ depends=('picom'
     'jgmenu'
     'jq'
     'htop'
-    'pa-applet')
+    'pa-applet'
+    'network-manager-applet')
 
 makedepends=('bash')
 provides=(instantdepend)
