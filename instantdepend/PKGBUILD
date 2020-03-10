@@ -56,7 +56,9 @@ depends=('picom'
     'jq'
     'htop'
     'pa-applet'
-    'network-manager-applet')
+    'network-manager-applet'
+    'lxsession'
+    'pamac-gtk')
 
 makedepends=('bash')
 provides=(instantdepend)
