@@ -1,6 +1,6 @@
 _pkgname=rangerplugins
 pkgname=$_pkgname
-pkgver=20200904
+pkgver=20204210
 pkgrel=1
 pkgdesc="plugins for ranger file manager"
 url="https://github.com/ranger/ranger.git"
@@ -42,8 +42,14 @@ package() {
         mv *.py "$GITREPO"/
     }
 
-    installplugin alexanderjeurissen/ranger_devicons
-    installplugin laggardkernel/ranger-fzf-marks
+    git clone --depth=1 "https://github.com/alexanderjeurissen/ranger_devicons.git"
+    cd ranger_devicons
+    mv __init__.py devicons_linemode.py
+    mv ./*.py ${pkgdir}/usr/share/rangerplugins/
+    cd ..
+    rm -rf ranger_devicons
 
+    installplugin laggardkernel/ranger-fzf-marks
+    touch ${pkgdir}/usr/share/rangerplugins/__init__.py
     mv ./* ${pkgdir}/usr/share/rangerplugins/
 }
