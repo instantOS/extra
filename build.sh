@@ -46,6 +46,7 @@ aurbuild libinput-gestures
 aurbuild autojump
 aurbuild urxvt-resize-font-git
 aurbuild rxvt-unicode-pixbuf
+aurbuild rofi-git
 
 cd build
 

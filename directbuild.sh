@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "building instantOS repository"
 cd
+mkdir stuff &> /dev/null
 cd stuff
 rm -rf extra
 git clone --depth=1 https://github.com/instantos/extra.git

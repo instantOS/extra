@@ -40,7 +40,6 @@ depends=('picom'
     'arandr'
     'qt5ct'
     'lxappearance'
-    'rofi'
     'conky'
     'dunst'
     'xdotool'
@@ -93,7 +92,8 @@ package() {
         'paperbash'
         'zsh-syntax-highlighting'
         'rxvt-unicode-pixbuf'
-        'rangerplugins')
+        'rangerplugins'
+        'rofi-git')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
