@@ -9,6 +9,8 @@ mac
 arc
 manjaro"
 
+cd ~/stuff
+
 [ -e build ] && rm -rf build
 mkdir build
 
