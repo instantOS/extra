@@ -4,13 +4,7 @@ echo "using 32bit utils"
 
 if ! [ -e ~/.makepkg.i686.conf ]; then
     echo "creating makepkg conf"
-
-    echo 'CARCH="i686"' >>~/.makepkg.i686.conf
-    echo 'CHOST="i686-unknown-linux-gnu"' >>~/.makepkg.i686.conf
-    echo 'CFLAGS="-m32 -march=i686 -mtune=generic -O2 -pipe -fstack-protector-strong"' >>~/.makepkg.i686.conf
-    echo 'CXXFLAGS="${CFLAGS}"' >>~/.makepkg.i686.conf
-    echo 'LDFLAGS="-m32 -Wl,-O1,--sort-common,--as-needed,-z,relro"' >>~/.makepkg.i686.conf
-
+    mv makepkg.conf ~/.makepkg.i686.conf
 fi
 
 # exit if failed build detected

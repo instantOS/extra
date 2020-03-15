@@ -7,6 +7,8 @@ echo "starting instantOS repo build"
 source utils.sh
 if [ "$1" = "32" ]; then
     source utils32.sh
+else
+    rm makepkg.conf
 fi
 
 if ! pacman -Qi paperbash &>/dev/null; then
