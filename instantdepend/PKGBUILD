@@ -40,7 +40,6 @@ depends=('picom'
     'arandr'
     'qt5ct'
     'lxappearance'
-    'rofi'
     'conky'
     'dunst'
     'xdotool'
@@ -58,7 +57,8 @@ depends=('picom'
     'pa-applet'
     'network-manager-applet'
     'lxsession'
-    'pamac-gtk')
+    'pamac-gtk'
+    'filemanager-actions')
 
 makedepends=('bash')
 provides=(instantdepend)
@@ -84,15 +84,14 @@ build() {
 
 package() {
     depends+=('yay'
-        'wmutils'
         'xdragon'
-        #'panther_launcher'
         'urxvt-resize-font-git'
         'autojump'
         'youtube-dl'
         'paperbash'
         'zsh-syntax-highlighting'
         'rxvt-unicode-pixbuf'
+        'rofi-git'
         'rangerplugins')
 
     cd $_pkgname

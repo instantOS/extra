@@ -40,8 +40,7 @@ bashbuild instantos
 bashbuild instantdepend
 
 # aur packages
-aurbuild libwm-git
-aurbuild wmutils-git wmutils
+aurbuild rofi-git
 aurbuild libinput-gestures
 aurbuild autojump
 aurbuild urxvt-resize-font-git
@@ -49,7 +48,6 @@ aurbuild rxvt-unicode-pixbuf
 
 cd build
 
-# linkbuild panther_launcher https://www.rastersoft.com/descargas/panther_launcher/panther_launcher-1.12.0-1-x86_64.pkg.tar.xz
 
 repo-add instant.db.tar.xz ./*.pkg.tar.xz
 apindex .
