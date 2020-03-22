@@ -1,6 +1,6 @@
 _pkgname=instantutils
 pkgname=$_pkgname
-pkgver=2020542059488ea
+pkgver=202014212d19f3b
 pkgrel=1
 pkgdesc="core utilities for instantOS"
 url="https://github.com/instantOS/instantos"
@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 
 pkgver() {
     cd $_pkgname
-    echo "$(date '+%Y%M%d')$(git rev-parse --short HEAD)"
+    echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
 }
 
 prepare() {

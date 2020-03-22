@@ -11,7 +11,7 @@ provides=(instantfonts)
 conflicts=(instantfonts)
 
 pkgver() {
-    echo "$(date '+%Y%M%d')"
+    echo "$(date '+%Y%m%H%M')"
 }
 
 prepare() {

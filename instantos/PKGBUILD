@@ -17,7 +17,7 @@ sha256sums=('SKIP')
 
 pkgver() {
     cd $_pkgname
-    echo "$(date '+%Y%M%d')$(git rev-parse --short HEAD)"
+    echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
 }
 
 prepare() {
@@ -40,7 +40,7 @@ package() {
         'instantwidgets'
         'instantcursors'
         'instantshell'
-        'instantfonts'
+        'otf-nerd-fonts-fira-code'
         'instantconf'
         'instantwm-arc'
         'instantlock-arc'

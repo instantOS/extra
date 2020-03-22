@@ -36,7 +36,6 @@ bashbuild instantthemes
 bashbuild instantwidgets
 bashbuild instantcursors
 bashbuild instantshell
-bashbuild instantfonts
 bashbuild instantconf
 bashbuild instantwelcome
 
@@ -49,7 +48,8 @@ bashbuild rangerplugins
 bashbuild instantos
 bashbuild instantdepend
 
-# aur packages
+# aur packages#
+aurbuild otf-nerd-fonts-fira-code
 aurbuild rofi-git
 aurbuild libinput-gestures
 aurbuild autojump
