@@ -4,7 +4,10 @@
 ## build a single instantOS package and put it in the repo ##
 #############################################################
 
-[ -n "$1" ] || echo "usage: ./singlebuild.sh packagename" && exit
+if [ -z "$1" ]; then
+    echo "usage: ./singlebuild.sh packagename"
+    exit
+fi
 
 if ! [ -e ~/workspace/extra ]; then
     echo "downloading extra"
