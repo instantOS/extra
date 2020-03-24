@@ -41,5 +41,9 @@ cp ~/workspace/extra/$1/* .
 makepkg
 
 mv *.pkg.tar.xz ~/stuff/extra/build/"$1".pkg.tar.xz
+
+cd
+rm -rf .cache/instantos/pkg
+
 ~/workspace/extra/utils/postbuild.sh
 echo "done building $1"
