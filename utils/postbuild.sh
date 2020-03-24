@@ -2,6 +2,7 @@
 
 #####################################################
 ## script to run after building instantos packages ##
+## uploads files to repo                           ##
 #####################################################
 
 cd ~/stuff/extra/build || exit 1
