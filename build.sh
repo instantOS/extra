@@ -26,10 +26,3 @@ done
 for i in $(cat aurpackages); do
     aurbuild "$i"
 done
-
-cd build
-
-repo-add instant.db.tar.xz ./*.pkg.tar.xz
-[ -e index.html ] && rm index.html
-apindex . || echo "error: apindex not found" && exit
-echo "done building repos"

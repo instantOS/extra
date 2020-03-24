@@ -13,15 +13,4 @@ else
     ./build.sh "$1"
 fi
 
-cd build
-
-if [ -e index.html ]; then
-    if [ -z "$1" ]; then
-        surge . instantos.surge.sh
-    else
-        surge . instantos32.surge.sh
-    fi
-else
-    echo "repo build failed"
-    exit 1
-fi
+./utils/postbuild.sh
