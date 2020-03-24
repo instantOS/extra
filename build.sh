@@ -17,6 +17,10 @@ fi
 
 for i in ./*; do
     if [ -e "$i/PKGBUILD" ]; then
+        if [ -e "$i"/ignore ]; then
+            echo "package $i is ignored"
+            continue
+        fi
         echo "building $i"
         bashbuild ${i#./}
     fi

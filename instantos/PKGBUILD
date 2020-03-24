@@ -42,9 +42,9 @@ package() {
         'instantshell'
         'otf-nerd-fonts-fira-code'
         'instantconf'
-        'instantwm-arc'
-        'instantlock-arc'
-        'instantmenu-arc'
+        'instantwm'
+        'instantlock'
+        'instantmenu'
         'instantwelcome')
 
     cd $_pkgname
