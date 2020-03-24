@@ -12,54 +12,24 @@ else
 fi
 
 if ! pacman -Qi paperbash &>/dev/null; then
-    echo "please install paperbash and libwm-git"
+    echo "please install paperbash"
 fi
 
-# themable instantOS packages
-# need to be compiled
-themebuild instantwm
-themebuild instantmenu
-themebuild instantlock
-
-# third party packages not available in the default repos
-# need to be compiled
-bashbuild xdragon
-
-# bashbuild grub-theme-live // not needed at the time
-
-# instantOS exclusive packages
-bashbuild instantdotfiles
-bashbuild instantassist
-bashbuild instantwallpaper
-bashbuild instantutils
-bashbuild instantthemes
-bashbuild instantwidgets
-bashbuild instantcursors
-bashbuild instantshell
-bashbuild instantconf
-bashbuild instantwelcome
-
-# paperbenni packages
-bashbuild liveutils
-bashbuild paperbash
-bashbuild rangerplugins
-
-# meta packages
-bashbuild instantos
-bashbuild instantdepend
+for i in ./*; do
+    if [ -e "$i/PKGBUILD" ]; then
+        echo "building $i"
+        bashbuild ${i#./}
+    fi
+done
 
 # aur packages#
-aurbuild otf-nerd-fonts-fira-code
-aurbuild rofi-git
-aurbuild libinput-gestures
-aurbuild autojump
-aurbuild urxvt-resize-font-git
-aurbuild rxvt-unicode-pixbuf
-aurbuild rofi-git
+for i in $(cat aurpackages); do
+    aurbuild "$i"
+done
 
 cd build
 
-
 repo-add instant.db.tar.xz ./*.pkg.tar.xz
-apindex .
+[ -e index.html ] && rm index.html
+apindex . || echo "error: apindex not found" && exit
 echo "done building repos"
