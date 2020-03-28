@@ -5,7 +5,7 @@ else
   THEME=manjaro
 fi
 
-pkgname=instantwm-$THEME
+pkgname=instantwm
 echo package name $pkgname
 _pkgname=instantwm-git
 pkgver=32321f4
