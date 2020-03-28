@@ -28,5 +28,11 @@ done
 
 # aur packages#
 for i in $(cat aurpackages); do
-    aurbuild "$i"
+    if grep -q ':' <<<"$i"; then
+        AURNAME=$(echo $i | grep -o '^[^:]*')
+        AURFINALNAME=$(echo $i | grep -o '[^:]*$')
+        aurbuild "$AURNAME" "$AURFINALNAME"
+    else
+        aurbuild "$i"
+    fi
 done
