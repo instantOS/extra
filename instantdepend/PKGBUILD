@@ -4,7 +4,7 @@ pkgver=20204923be4c9bc
 pkgrel=1
 pkgdesc="meta package for instantOS dependencies"
 url="https://github.com/instantOS/instantMETA"
-arch=('i686' 'x86_64')
+arch=('any')
 license=('MIT')
 depends=('picom'
     'arc-gtk-theme'
