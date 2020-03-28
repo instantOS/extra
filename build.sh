@@ -17,7 +17,7 @@ fi
 
 for i in ./*; do
     if [ -e "$i/PKGBUILD" ]; then
-        if [ -e "$i"/ignore ]; then
+        if [ -e "$i"/ignore ] || [ -e ~/stuff/32bit/"$i" ]; then
             echo "package $i is ignored"
             continue
         fi

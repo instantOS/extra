@@ -73,6 +73,12 @@ aurbuild() {
     if [ -n "$2" ]; then
         sed -i 's/^pkgname=.*/pkgname='"$2"'/g' PKGBUILD
     fi
+
+    # force compatibility
+    if [ -e ~/stuff/32bit ]; then
+        sed -i "s/^arch=/arch=('any')/g" PKGBUILD
+    fi
+
     checkmake
     if ls *.pkg.tar.xz | wc -l | grep -q '1'; then
         mv *.pkg.tar.xz ../build/"$1".pkg.tar.xz
