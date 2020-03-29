@@ -27,6 +27,7 @@ instantdepend/instantdepend
 instantconf/instantconf
 rangerplugins/rangerplugins
 instantwelcome/instantwelcome
+instanttools/instanttools
 
 # Local Netlify folder
 .netlify
