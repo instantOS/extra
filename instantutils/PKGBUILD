@@ -33,6 +33,7 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/xsessions
+    mkdir -p ${pkgdir}/usr/share/instantutils
     mkdir -p ${pkgdir}/etc/X11/xorg.conf.d
 
     cp instantwm.desktop default.desktop
@@ -40,11 +41,13 @@ package() {
     mv default.desktop ${pkgdir}/usr/share/xsessions/
 
     chmod +x *.sh
-    chmod +x installinstantos
-    mv ./installinstantos ${pkgdir}/usr/bin/installinstantos
     mv ./autostart.sh ${pkgdir}/usr/bin/instantautostart
     mv ./status.sh ${pkgdir}/usr/bin/instantstatus
     mv ./monitor.sh ${pkgdir}/usr/bin/instantmonitor
+
+    mv ./instantutils.sh ${pkgdir}/usr/bin/instantutils
+
+    mv *.sh ${pkgdir}/usr/share/instantutils/
 
     cd programs
     chmod +x ./*
