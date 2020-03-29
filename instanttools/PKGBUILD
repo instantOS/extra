@@ -36,6 +36,6 @@ package() {
     chmod 755 *.sh
     chmod 755 utils/*.sh
     mv ibuild.sh ${pkgdir}/usr/bin/ibuild
-    mv utils/* /usr/share/instanttools/
+    mv utils/* ${pkgdir}/usr/share/instanttools/
 
 }
