@@ -61,7 +61,7 @@ depends=('picom'
     'pamac-gtk'
     'filemanager-actions')
 
-makedepends=('bash')
+makedepends=('bash' 'curl')
 provides=(instantdepend)
 conflicts=(instantdepend)
 source=("$_pkgname::git+https://github.com/instantOS/instantMETA.git")

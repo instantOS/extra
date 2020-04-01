@@ -33,9 +33,13 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/instanttools
+
     chmod 755 *.sh
+    chmod 755 *.py
     chmod 755 utils/*.sh
+
     mv ibuild.sh ${pkgdir}/usr/bin/ibuild
+    mv pkgparse.py ${pkgdir}/usr/bin/pkgparse
     mv utils/* ${pkgdir}/usr/share/instanttools/
 
 }
