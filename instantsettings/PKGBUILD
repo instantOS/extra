@@ -1,6 +1,6 @@
 _pkgname=instantsettings
 pkgname=$_pkgname
-pkgver=2020510537b3844
+pkgver=2020040026eb665ca
 pkgrel=1
 pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
@@ -8,8 +8,8 @@ arch=('any')
 license=('MIT')
 depends=('bash')
 makedepends=('git')
-provides=(instantconf)
-conflicts=(instantconf)
+provides=(instantsettings)
+conflicts=(instantsettings)
 source=("$_pkgname::git+https://github.com/instantOS/instantsettings.git")
 
 sha256sums=('SKIP')
