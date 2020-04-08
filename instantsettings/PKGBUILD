@@ -32,9 +32,8 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p "${pkgdir}"/usr/share/instantsettings
-    rm -rf .git
-    rm *.md
-    mv mainsettings.py ${pkgdir}/usr/bin
+    mkdir -p "${pkgdir}"/usr/bin
+    mv mainsettings.py ${pkgdir}/usr/bin/instantsettings
     chmod 755 "${pkgdir}"/usr/bin/instantsettings
-    mv .*/ "${pkgdir}"/usr/share/instantsettings/
+    mv ./* "${pkgdir}"/usr/share/instantsettings/
 }
