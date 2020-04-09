@@ -49,6 +49,9 @@ package() {
 
     mv *.sh ${pkgdir}/usr/share/instantutils/
 
+    mkdir -p "$pkgdir/usr/share/applications/"
+    mv ./desktop/*.desktop "$pkgdir/usr/share/applications/"
+
     cd programs
     chmod +x ./*
     mv ./* ${pkgdir}/usr/bin/

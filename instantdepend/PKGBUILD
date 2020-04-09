@@ -59,7 +59,9 @@ depends=('picom'
     'network-manager-applet'
     'lxsession'
     'pamac-gtk'
-    'filemanager-actions')
+    'filemanager-actions'
+    'autorandr')
+    'xorg-xinput'
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
