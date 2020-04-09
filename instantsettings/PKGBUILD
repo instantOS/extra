@@ -33,8 +33,7 @@ package() {
     cd $_pkgname
 
     mkdir -p "$pkgdir/usr/share/applications/"
-    mv ./desktop/*.desktop "$pkgdir/usr/share/applications/"
-    
+    mv ./*.desktop "$pkgdir/usr/share/applications/"
 
     mkdir -p "${pkgdir}"/usr/share/instantsettings
     mkdir -p "${pkgdir}"/usr/bin
