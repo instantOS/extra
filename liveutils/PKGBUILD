@@ -36,6 +36,5 @@ package() {
     chmod +x *.py
     chmod +x *.sh
     mv installapplet.py ${pkgdir}/usr/bin/installapplet
-    mv *.sh ${pkgdir}/usr/bin/installinstantos
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
 }

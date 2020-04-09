@@ -46,6 +46,7 @@ package() {
     mv ./monitor.sh ${pkgdir}/usr/bin/instantmonitor
 
     mv ./instantutils.sh ${pkgdir}/usr/bin/instantutils
+    mv ./installinstantos.sh ${pkgdir}/usr/bin/installinstantos
 
     mv *.sh ${pkgdir}/usr/share/instantutils/
 
