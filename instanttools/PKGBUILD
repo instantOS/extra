@@ -1,6 +1,6 @@
 _pkgname=instanttools
 pkgname=$_pkgname
-pkgver=202014212d19f3b
+pkgver=2020041258757ebd9
 pkgrel=1
 pkgdesc="development tools for instantOS"
 url="https://github.com/instantOS/instanttools"

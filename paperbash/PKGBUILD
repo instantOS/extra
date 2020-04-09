@@ -14,8 +14,6 @@ source=("$_pkgname::git+https://github.com/paperbenni/bash.git")
 
 sha256sums=('SKIP')
 
-install=paperbash.install
-
 pkgver() {
     cd $_pkgname
     echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
