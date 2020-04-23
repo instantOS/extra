@@ -1,6 +1,6 @@
 _pkgname=instanttools
 pkgname=$_pkgname
-pkgver=2020041258757ebd9
+pkgver=2020041458757ebd9
 pkgrel=1
 pkgdesc="development tools for instantOS"
 url="https://github.com/instantOS/instanttools"
@@ -35,11 +35,9 @@ package() {
     mkdir -p ${pkgdir}/usr/share/instanttools
 
     chmod 755 *.sh
-    chmod 755 *.py
     chmod 755 utils/*.sh
 
     mv ibuild.sh ${pkgdir}/usr/bin/ibuild
-    mv pkgparse.py ${pkgdir}/usr/bin/pkgparse
     mv utils/* ${pkgdir}/usr/share/instanttools/
 
 }
