@@ -60,8 +60,9 @@ depends=('picom'
     'lxsession'
     'pamac-gtk'
     'filemanager-actions'
-    'autorandr')
+    'autorandr'
     'xorg-xinput'
+    'xfce4-power-manager')
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
