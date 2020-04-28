@@ -12,7 +12,7 @@ provides=(rangerplugins)
 conflicts=(rangerplugins)
 
 pkgver() {
-    echo "$(date '+%Y%m%H%M')"
+    echo "$(date '+%Y%m%d%H%M')"
 }
 
 prepare() {

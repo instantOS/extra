@@ -25,7 +25,7 @@ md5sums=("SKIP")
 
 pkgver() {
   cd $_pkgname
-  echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
+  echo "$(date '+%Y%m%d%H%M')"
 }
 
 prepare() {

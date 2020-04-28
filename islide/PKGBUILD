@@ -1,6 +1,6 @@
 _pkgname=islide
 pkgname=$_pkgname
-pkgver=20200418237363ce0
+pkgver=20200419527363ce0
 pkgrel=1
 pkgdesc="slider for instantOS"
 url="https://github.com/instantos/instantUI"
@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
+  echo "$(date '+%Y%m%d%H%M')"
 }
 
 prepare() {
