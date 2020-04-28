@@ -1,0 +1,38 @@
+_pkgname=islide
+pkgname=$_pkgname
+pkgver=fece5ac
+pkgrel=1
+pkgdesc="slider for instantOS"
+url="https://github.com/instantos/instantUI"
+arch=('any')
+license=('MIT')
+depends=('sh' 'libxinerama' 'libxft')
+makedepends=('git')
+provides=(islide)
+conflicts=(islide)
+source=("$_pkgname::git+https://github.com/instantOS/instantUI")
+
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  echo "$(date '+%Y%m%H%M')$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  cd $_pkgname
+  echo "no prep"
+}
+
+build() {
+  cd $_pkgname
+  make \
+    X11INC=/usr/include/X11 \
+    X11LIB=/usr/lib/X11
+}
+
+package() {
+  cd $_pkgname
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

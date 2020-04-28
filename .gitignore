@@ -7,6 +7,7 @@
 build
 build/*
 instantmenu/instantmenu-*
+islide/islide-*
 instantassist/instantassist
 instantlock/instantlock-*
 instantwallpaper/instant*
