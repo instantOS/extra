@@ -62,7 +62,8 @@ depends=('picom'
     'filemanager-actions'
     'autorandr'
     'xorg-xinput'
-    'xfce4-power-manager')
+    'xfce4-power-manager'
+    'blueman')
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
