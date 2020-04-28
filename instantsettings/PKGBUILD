@@ -1,6 +1,6 @@
 _pkgname=instantsettings
 pkgname=$_pkgname
-pkgver=2020040042def30d9
+pkgver=20200418582105abb
 pkgrel=1
 pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
