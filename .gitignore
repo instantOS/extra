@@ -33,5 +33,6 @@ instanttools/instanttools
 instantsettings/instantsettings
 flatpakinstaller/flatpakinstaller
 snapdummy/snapdummy
+snap-dummy/snap-dummy
 # Local Netlify folder
 .netlify

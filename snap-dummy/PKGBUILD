@@ -1,6 +1,6 @@
 _pkgname=snap-dummy
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=202004292231
 pkgrel=1
 pkgdesc="a tiny program that warns about snaps"
 url="https://github.com/instantOS/snap-dummy"
@@ -34,6 +34,6 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
 
     chmod +x *.sh
-    mv *.sh ${pkgdir}/usr/bin/snap-dummy
+    mv *.sh ${pkgdir}/usr/bin/snap
 
 }
