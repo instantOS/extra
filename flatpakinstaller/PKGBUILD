@@ -1,6 +1,6 @@
 _pkgname=flatpakinstaller
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=202004292032
 pkgrel=1
 pkgdesc="a simple installer for flatpaks"
 url="https://github.com/instantOS/flatpakinstaller"

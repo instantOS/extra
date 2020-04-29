@@ -1,0 +1,39 @@
+_pkgname=snap-dummy
+pkgname=$_pkgname
+pkgver=9851542
+pkgrel=1
+pkgdesc="a tiny program that warns about snaps"
+url="https://github.com/instantOS/snap-dummy"
+arch=('any')
+license=('MIT')
+depends=('sh' 'python')
+makedepends=('git')
+provides=(snap)
+conflicts=(snapd)
+source=("$_pkgname::git+https://github.com/instantOS/snap-dummy.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+prepare() {
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/bin
+
+    chmod +x *.sh
+    mv *.sh ${pkgdir}/usr/bin/snap-dummy
+
+}
