@@ -31,5 +31,6 @@ rangerplugins/rangerplugins
 instantwelcome/instantwelcome
 instanttools/instanttools
 instantsettings/instantsettings
+flatpakinstaller/flatpakinstaller
 # Local Netlify folder
 .netlify
