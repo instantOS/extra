@@ -1,6 +1,6 @@
 _pkgname=instantwallpaper
 pkgname=$_pkgname
-pkgver=20200411571c507ea
+pkgver=202004291830
 pkgrel=1
 pkgdesc="wallpaper generator for instantOS"
 url="https://github.com/instantOS/instantwallpaper"

@@ -1,6 +1,6 @@
 _pkgname=instantsettings
 pkgname=$_pkgname
-pkgver=20200418582105abb
+pkgver=202004291911
 pkgrel=1
 pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
@@ -40,4 +40,5 @@ package() {
     mv mainsettings.py ${pkgdir}/usr/bin/instantsettings
     chmod 755 "${pkgdir}"/usr/bin/instantsettings
     mv ./* "${pkgdir}"/usr/share/instantsettings/
+    ln -s /usr/bin/instantsettings ${pkgdir}/usr/bin/instantos-control-center
 }

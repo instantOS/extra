@@ -1,6 +1,6 @@
 _pkgname=islide
 pkgname=$_pkgname
-pkgver=20200419527363ce0
+pkgver=202004291431
 pkgrel=1
 pkgdesc="slider for instantOS"
 url="https://github.com/instantos/instantUI"

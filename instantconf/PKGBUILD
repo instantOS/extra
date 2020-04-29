@@ -1,6 +1,6 @@
 _pkgname=instantconf
 pkgname=$_pkgname
-pkgver=2020510537b3844
+pkgver=202004291748
 pkgrel=1
 pkgdesc="simple config system for instantOS"
 url="https://github.com/instantOS/instantconf"
