@@ -1,0 +1,41 @@
+_pkgname=sideload
+pkgname=$_pkgname
+pkgver=202005031251
+pkgrel=1
+pkgdesc="gui installer for flatpaks"
+url="https://github.com/elementary/sideload.git"
+arch=('any')
+license=('MIT')
+depends=('flatpak')
+makedepends=('git')
+provides=(sideload)
+conflicts=(sideload)
+source=("$_pkgname::git+https://github.com/elementary/sideload.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+prepare() {
+    cd $_pkgname
+    echo "no prepare"
+}
+
+build() {
+    cd $_pkgname
+    echo "no build"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p ${pkgdir}/usr/
+    rm data/icons/*
+    wget -O data/icons/48.svg 'https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/48x48/mimetypes/application-vnd.flatpak.svg'
+    meson build --prefix=${pkgdir}/usr
+    cd build
+    ninja
+    ninja install
+}

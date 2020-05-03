@@ -1,6 +1,6 @@
 _pkgname=instantutils
 pkgname=$_pkgname
-pkgver=2020042114f9046a6
+pkgver=202005030010
 pkgrel=1
 pkgdesc="core utilities for instantOS"
 url="https://github.com/instantOS/instantos"
