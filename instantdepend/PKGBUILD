@@ -97,7 +97,9 @@ package() {
         'zsh-syntax-highlighting'
         'rxvt-unicode-pixbuf'
         'rofi-git'
-        'rangerplugins')
+        'rangerplugins'
+        'sideload'
+        'irox')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
