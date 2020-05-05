@@ -1,6 +1,6 @@
 _pkgname=instantdotfiles
 pkgname=$_pkgname
-pkgver=2020042037b187684
+pkgver=202005051601
 pkgrel=1
 pkgdesc="dotfiles for instantOS"
 url="https://github.com/paperbenni/dotfiles"
@@ -32,6 +32,7 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/instantdotfiles
+    git rev-parse --short HEAD > ${pkgdir}/usr/share/instantdotfiles/versionhash
     rm -rf .git
     chmod +x *.sh
     chmod +x fonts/*.sh
