@@ -26,7 +26,10 @@ prepare() {
 
 build() {
     cd $_pkgname
-    echo "no build"
+    make \
+        X11INC=/usr/include/X11 \
+        X11LIB=/usr/lib/X11
+
 }
 
 package() {
