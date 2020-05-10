@@ -1,6 +1,6 @@
 _pkgname=islide
 pkgname=$_pkgname
-pkgver=fece5ac
+pkgver=202005101801
 pkgrel=1
 pkgdesc="slider for instantOS"
 url="https://github.com/instantos/islide"
@@ -26,21 +26,14 @@ prepare() {
 
 build() {
   cd $_pkgname
-  make \
-    X11INC=/usr/include/X11 \
-    X11LIB=/usr/lib/X11
 }
 
 package() {
+
   cd $_pkgname
-  env
-  echo "pwd"
-  pwd
-  echo "ls"
-  ls -a
-  echo ""
-  echo "pkdir $pkgdir"
-  echo "pkdir $_pkgname"
-  make PREFIX=/usr DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  make
+  ls
+  mkdir -p ${pkgdir}/usr/bin
+  mv islide "${pkgdir}"/usr/bin/islide
+  chmod +x "${pkgdir}"/usr/bin/islide
 }
