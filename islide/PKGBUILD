@@ -33,6 +33,14 @@ build() {
 
 package() {
   cd $_pkgname
+  env
+  echo "pwd"
+  pwd
+  echo "ls"
+  ls -a
+  echo ""
+  echo "pkdir $pkgdir"
+  echo "pkdir $_pkgname"
   make PREFIX=/usr DESTDIR="$pkgdir" install
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
