@@ -1,16 +1,16 @@
 _pkgname=islide
 pkgname=$_pkgname
-pkgver=202004291431
+pkgver=fece5ac
 pkgrel=1
 pkgdesc="slider for instantOS"
-url="https://github.com/instantos/instantUI"
+url="https://github.com/instantos/islide"
 arch=('any')
 license=('MIT')
 depends=('sh' 'libxinerama' 'libxft')
 makedepends=('git')
 provides=(islide)
 conflicts=(islide)
-source=("$_pkgname::git+https://github.com/instantOS/instantUI")
+source=("$_pkgname::git+https://github.com/instantOS/islide.git")
 
 sha256sums=('SKIP')
 
@@ -21,7 +21,7 @@ pkgver() {
 
 prepare() {
   cd $_pkgname
-  echo "no prep"
+  echo "no prepare"
 }
 
 build() {
