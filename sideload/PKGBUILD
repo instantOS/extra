@@ -1,6 +1,6 @@
 _pkgname=sideload
 pkgname=$_pkgname
-pkgver=202005031251
+pkgver=202005101745
 pkgrel=1
 pkgdesc="gui installer for flatpaks"
 url="https://github.com/elementary/sideload.git"
@@ -26,9 +26,7 @@ prepare() {
 
 build() {
     cd $_pkgname
-    make \
-        X11INC=/usr/include/X11 \
-        X11LIB=/usr/lib/X11
+    echo "no build"
 
 }
 
