@@ -33,7 +33,6 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/instantdotfiles
     git rev-parse --short HEAD > ${pkgdir}/usr/share/instantdotfiles/versionhash
-    rm -rf .git
     chmod +x *.sh
     chmod +x fonts/*.sh
     chmod +x instantdotfiles
