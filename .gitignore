@@ -36,5 +36,6 @@ snap-dummy/snap-dummy
 irox/rox*
 irox/irox*
 sideload/sideload
+imenu/imenu
 # Local Netlify folder
 .netlify
