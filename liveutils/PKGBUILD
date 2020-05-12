@@ -34,6 +34,9 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/liveutils
     chmod +x *.py
+    chmod +x *.sh
+    mv *.sh ${pkgdir}/usr/bin/
+
     mv installapplet.py ${pkgdir}/usr/bin/installapplet
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
 }
