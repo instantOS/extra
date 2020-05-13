@@ -35,7 +35,7 @@ package() {
     mkdir -p ${pkgdir}/usr/share/liveutils
     chmod +x *.py
     chmod +x *.sh
-    mv *.sh ${pkgdir}/usr/bin/
+    mv *.sh ${pkgdir}/usr/bin/instantosinstaller
 
     mv installapplet.py ${pkgdir}/usr/bin/installapplet
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
