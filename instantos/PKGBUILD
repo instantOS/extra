@@ -47,7 +47,8 @@ package() {
         'instantmenu'
         'instantwelcome'
         'instantsettings'
-        'islide')
+        'islide'
+        'imenu')
 
     cd $_pkgname
 
