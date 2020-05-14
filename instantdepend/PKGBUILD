@@ -63,7 +63,8 @@ depends=('picom'
     'autorandr'
     'xorg-xinput'
     'xfce4-power-manager'
-    'blueman')
+    'blueman'
+    'dmidecode')
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
