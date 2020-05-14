@@ -1,6 +1,6 @@
 _pkgname=grub-instantos
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=202005141602
 pkgrel=1
 pkgdesc="the grub theme for instantOS"
 url="https://github.com/instantOS/grub-instantos"

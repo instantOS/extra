@@ -37,5 +37,6 @@ irox/rox*
 irox/irox*
 sideload/sideload
 imenu/imenu
+grub-instantos/grub-instantos
 # Local Netlify folder
 .netlify
