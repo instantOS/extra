@@ -1,6 +1,6 @@
 _pkgname=liveutils
 pkgname=$_pkgname
-pkgver=9851542
+pkgver=202005141515
 pkgrel=1
 pkgdesc="installation media utilities for instantOS"
 url="https://github.com/instantOS/liveutils"
@@ -39,4 +39,5 @@ package() {
 
     mv installapplet.py ${pkgdir}/usr/bin/installapplet
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
+    mv assets/*.jpg ${pkgdir}/usr/share/liveutils/
 }
