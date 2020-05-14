@@ -32,7 +32,7 @@ build() {
 package() {
     cd $_pkgname
 
-    mkdir -p ${pkgdir}/boot/grub/themes/instantos
+    mkdir -p ${pkgdir}/usr/share/grub/themes/instantos
     rm README.*
-    mv ./* ${pkgdir}/boot/grub/themes/instantos/
+    mv ./* ${pkgdir}/usr/share/grub/themes/instantos
 }
