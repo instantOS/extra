@@ -48,7 +48,8 @@ package() {
         'instantwelcome'
         'instantsettings'
         'islide'
-        'imenu')
+        'imenu'
+        'grub-instantos')
 
     cd $_pkgname
 
