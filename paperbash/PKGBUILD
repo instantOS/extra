@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=paperbash
 pkgname=$_pkgname
 pkgver=d400d26

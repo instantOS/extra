@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantfonts
 pkgname=$_pkgname
 pkgver=20205001

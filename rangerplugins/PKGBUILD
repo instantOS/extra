@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=rangerplugins
 pkgname=$_pkgname
 pkgver=20204210

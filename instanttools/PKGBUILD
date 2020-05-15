@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instanttools
 pkgname=$_pkgname
 pkgver=2020041458757ebd9

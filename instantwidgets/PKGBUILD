@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantwidgets
 pkgname=$_pkgname
 pkgver=20204208429760e

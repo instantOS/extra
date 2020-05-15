@@ -1,3 +1,4 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantwelcome
 pkgname=$_pkgname
 pkgver=20202610d52be7a
