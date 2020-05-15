@@ -101,7 +101,8 @@ package() {
         'rofi-git'
         'rangerplugins'
         'sideload'
-        'irox')
+        'irox'
+        'pamac-aur')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
