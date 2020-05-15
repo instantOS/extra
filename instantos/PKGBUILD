@@ -9,7 +9,7 @@ arch=('any')
 license=('MIT')
 depends=('git')
 
-makedepends=('bash')
+makedepends=('bash' 'git')
 provides=(instantos)
 conflicts=(instantos)
 source=("$_pkgname::git+https://github.com/instantOS/instantMETA.git")
