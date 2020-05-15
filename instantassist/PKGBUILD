@@ -8,7 +8,7 @@ url="https://github.com/instantos/instantassist"
 arch=('any')
 license=('MIT')
 options=(zipman)
-depends=('bash')
+depends=('bash' 'instantmenu')
 makedepends=('git')
 provides=('instantassist')
 
