@@ -7,7 +7,7 @@ pkgdesc="meta package for instantOS dependencies"
 url="https://github.com/instantOS/instantMETA"
 arch=('any')
 license=('MIT')
-depends=('picom'
+depends=('picom-tryone-git'
     'arc-gtk-theme'
     'xorg-xrandr'
     'slop'
