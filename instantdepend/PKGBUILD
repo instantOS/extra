@@ -103,7 +103,7 @@ package() {
         'sideload'
         'irox'
         'pamac-aur'
-        'st-luke'
+        'st-luke-git'
         'libxft-bgra')
 
     cd $_pkgname
