@@ -103,8 +103,7 @@ package() {
         'sideload'
         'irox'
         'pamac-aur'
-        'st-luke-git'
-        'libxft-bgra')
+        'st-luke-git')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
