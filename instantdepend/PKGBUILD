@@ -102,7 +102,9 @@ package() {
         'rangerplugins'
         'sideload'
         'irox'
-        'pamac-aur')
+        'pamac-aur'
+        'st-luke'
+        'libxft-bgra')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos

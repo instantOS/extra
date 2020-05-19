@@ -38,5 +38,6 @@ irox/irox*
 sideload/sideload
 imenu/imenu
 grub-instantos/grub-instantos
+st-luke/st-luke
 # Local Netlify folder
 .netlify
