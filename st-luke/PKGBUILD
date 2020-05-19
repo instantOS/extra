@@ -31,7 +31,7 @@ prepare() {
   cd "${_pkgname}"
   # skip terminfo which conflicts with nsurses
   sed -i '/tic /d' Makefile
-  sed -i 's/mono:pixelsize/Fira Code Nerd Font Mono:pixelsize/' config.h
+  sed -i 's/mono:pixelsize=14/Fira Code Nerd Font Mono:pixelsize=15/' config.h
 }
 
 build() {
