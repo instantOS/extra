@@ -66,7 +66,8 @@ depends=('picom-tryone-git'
     'xfce4-power-manager'
     'blueman'
     'dmidecode'
-    'alacarte')
+    'alacarte'
+    'imgur.sh')
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
