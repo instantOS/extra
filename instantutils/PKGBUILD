@@ -33,13 +33,8 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
-    mkdir -p ${pkgdir}/usr/share/xsessions
     mkdir -p ${pkgdir}/usr/share/instantutils
     mkdir -p ${pkgdir}/etc/X11/xorg.conf.d
-
-    cp instantwm.desktop default.desktop
-    mv instantwm.desktop ${pkgdir}/usr/share/xsessions/
-    mv default.desktop ${pkgdir}/usr/share/xsessions/
 
     chmod +x *.sh
     mv ./autostart.sh ${pkgdir}/usr/bin/instantautostart

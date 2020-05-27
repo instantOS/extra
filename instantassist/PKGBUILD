@@ -2,7 +2,7 @@
 pkgname=instantassist
 echo package name $pkgname
 _pkgname=instantassist
-pkgver=20200420158c352e0
+pkgver=202005271447
 pkgrel=1
 pkgdesc="a bunch of shortcuts for instantOS"
 url="https://github.com/instantos/instantassist"

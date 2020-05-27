@@ -9,7 +9,7 @@ fi
 pkgname=instantwm
 echo package name $pkgname
 _pkgname=instantwm-git
-pkgver=32321f4
+pkgver=202005271719
 pkgrel=1
 pkgdesc="window manager for instantOS"
 url="https://github.com/instantos/instantwm"
