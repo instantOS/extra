@@ -38,7 +38,6 @@ depends=('picom-tryone-git'
     'xclip'
     'ffmpeg'
     'feh'
-    'mpv'
     'arandr'
     'qt5ct'
     'lxappearance'
@@ -66,7 +65,8 @@ depends=('picom-tryone-git'
     'blueman'
     'dmidecode'
     'alacarte'
-    'imgur.sh')
+    'imgur.sh'
+    'gtk2-perl')
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
