@@ -103,7 +103,6 @@ package() {
         'rangerplugins'
         'sideload'
         'irox'
-        'pamac-aur'
         'st-luke-git')
 
     cd $_pkgname
