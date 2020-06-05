@@ -1,6 +1,5 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 pkgname=instantassist
-echo package name $pkgname
 _pkgname=instantassist
 pkgver=202005271447
 pkgrel=1
