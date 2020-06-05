@@ -7,7 +7,7 @@ else
 fi
 
 pkgname=instantwm
-echo package name $pkgname
+
 _pkgname=instantwm-git
 pkgver=202005271719
 pkgrel=1
