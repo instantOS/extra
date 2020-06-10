@@ -5,7 +5,7 @@
 
 pkgname=st-luke-git
 _pkgname=st-luke
-pkgver=0.8.2.r1140.22c71c3
+pkgver=0.8.2.r1145.b6a1f2d
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='https://github.com/LukeSmithxyz/st.git'
@@ -23,7 +23,7 @@ conflicts=('st')
 
 pkgver() {
   cd "${_pkgname}"
-  _pkgver=$(awk '/VERSION/ {print $3}' config.mk|head -1)
+  _pkgver=$(awk '/VERSION/ {print $3}' config.mk | head -1)
   echo "${_pkgver}.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
 }
 
@@ -32,6 +32,11 @@ prepare() {
   # skip terminfo which conflicts with nsurses
   sed -i '/tic /d' Makefile
   sed -i 's/mono:pixelsize=14/Fira Code Nerd Font Mono:pixelsize=15/' config.h
+  sed -i 's/MODKEY,.*XK_c,.*clipcopy/ControlMask|ShiftMask, XK_C, clipcopy/g' config.h
+  sed -i 's/MODKEY,.*XK_v,.*clippaste/ControlMask|ShiftMask, XK_C, clippaste/g' config.h
+  sed -i 's/TERMMOD,.*XK_J,/ControlMask, XK_minus,/g' config.h
+  sed -i 's/TERMMOD,.*XK_K,/ControlMask, XK_plus,/g' config.h
+
 }
 
 build() {
