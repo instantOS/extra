@@ -33,7 +33,7 @@ prepare() {
   sed -i '/tic /d' Makefile
   sed -i 's/mono:pixelsize=14/Fira Code Nerd Font Mono:pixelsize=15/' config.h
   sed -i 's/MODKEY,.*XK_c,.*clipcopy/ControlMask|ShiftMask, XK_C, clipcopy/g' config.h
-  sed -i 's/MODKEY,.*XK_v,.*clippaste/ControlMask|ShiftMask, XK_C, clippaste/g' config.h
+  sed -i 's/MODKEY,.*XK_v,.*clippaste/ControlMask|ShiftMask, XK_V, clippaste/g' config.h
   sed -i 's/TERMMOD,.*XK_J,/ControlMask, XK_minus,/g' config.h
   sed -i 's/TERMMOD,.*XK_K,/ControlMask, XK_plus,/g' config.h
 
