@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantwallpaper
 pkgname=$_pkgname
-pkgver=202006121418
+pkgver=202006121511
 pkgrel=1
 pkgdesc="wallpaper generator for instantOS"
 url="https://github.com/instantOS/instantwallpaper"
@@ -39,7 +39,7 @@ package() {
 
     mv wallutils.sh ${pkgdir}/usr/share/instantwallpaper
     wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$RAW/wallpaper/defaultwall.png"
-    wget -qO ${pkgdir}/usr/share/backgrounds/readme.png "$RAW/wallpaper/readme.png"
+    wget -qO ${pkgdir}/usr/share/backgrounds/readme.jpg "$RAW/wallpaper/readme.jpg"
     # ascii art for neofetch
     wget -qO ${pkgdir}/usr/share/instantwallpaper/ascii.txt "$RAW/ascii.txt"
     wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$RAW/wallpaper/defaultphoto.png"
