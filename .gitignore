@@ -41,3 +41,4 @@ grub-instantos/grub-instantos
 st-luke/st-luke
 # Local Netlify folder
 .netlify
+plymouth*/plymouth*

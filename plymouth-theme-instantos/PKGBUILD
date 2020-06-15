@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=plymouth-theme-instantos
 pkgname=$_pkgname
-pkgver=d400d26
+pkgver=202006151455
 pkgrel=1
 pkgdesc="boot splash screen animation with the instantOS logo"
 url="https://github.com/paperbenni/bash"
