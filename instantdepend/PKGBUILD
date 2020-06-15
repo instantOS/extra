@@ -103,7 +103,9 @@ package() {
         'rangerplugins'
         'sideload'
         'irox'
-        'st-luke-git')
+        'st-luke-git'
+        'plymouth-git'
+        'plymouth-theme-instantos')
 
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
