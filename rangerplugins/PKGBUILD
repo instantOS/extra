@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=rangerplugins
 pkgname=$_pkgname
-pkgver=202006211817
+pkgver=202006232212
 pkgrel=1
 pkgdesc="plugins for ranger file manager"
 url="https://github.com/ranger/ranger.git"
@@ -47,4 +47,5 @@ package() {
     installplugin laggardkernel/ranger-fzf-marks
     touch ${pkgdir}/usr/share/rangerplugins/__init__.py
     mv ./* ${pkgdir}/usr/share/rangerplugins/
+    mv ${pkgdir}/usr/share/rangerplugins/ranger_devicons/* ${pkgdir}/usr/share/rangerplugins/
 }
