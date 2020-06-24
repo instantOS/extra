@@ -5,7 +5,7 @@
 
 pkgname=st-luke-git
 _pkgname=st-luke
-pkgver=0.8.2.r1145.b6a1f2d
+pkgver=0.8.2.r1148.222eac7
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='https://github.com/LukeSmithxyz/st.git'
@@ -36,7 +36,7 @@ prepare() {
   sed -i 's/MODKEY,.*XK_v,.*clippaste/ControlMask|ShiftMask, XK_V, clippaste/g' config.h
   sed -i 's/TERMMOD,.*XK_J,/ControlMask, XK_minus,/g' config.h
   sed -i 's/TERMMOD,.*XK_K,/ControlMask, XK_plus,/g' config.h
-
+  sed -i '/.*ControlMask, XK_plus.*/a	{ ControlMask,              XK_equal,           zoom,           {.f = +1} },' config.h
 }
 
 build() {
