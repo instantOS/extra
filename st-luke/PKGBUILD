@@ -22,9 +22,8 @@ provides=('st')
 conflicts=('st')
 
 pkgver() {
-  cd "${_pkgname}"
-  _pkgver=$(awk '/VERSION/ {print $3}' config.mk | head -1)
-  echo "${_pkgver}.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+  cd $_pkgname
+  echo "$(date '+%Y%m%d%H%M')"
 }
 
 prepare() {
