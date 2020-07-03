@@ -1,0 +1,45 @@
+# Maintainer: Chris Down <chris@chrisdown.name>
+
+pkgname=instantclipmenu
+_gitname=clipmenu
+pkgver=6.1.0.r2.g358f796
+pkgrel=1
+pkgdesc='Clipboard management using instantmenu'
+url='http://github.com/cdown/clipmenu'
+arch=('any')
+license=('Public Domain')
+depends=(instantmenu xsel clipnotify)
+provides=(clipmenu instantclipmenu)
+conflicts=(clipmenu)
+makedepends=(git)
+
+source=(git://github.com/cdown/clipmenu.git)
+md5sums=('SKIP')
+
+pkgver() {
+    cd "$_gitname"
+    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+
+    pushd ${srcdir?}/$_gitname/
+    grep -rl dmenu . | xargs sed -i 's/dmenu/instantmenu/g'
+    popd
+
+    install -D -m755 \
+        "${srcdir?}/$_gitname/clipmenu" \
+        "${pkgdir?}/usr/bin/clipmenu"
+    install -D -m755 \
+        "${srcdir?}/$_gitname/clipmenud" \
+        "${pkgdir?}/usr/bin/clipmenud"
+    install -D -m755 \
+        "${srcdir?}/$_gitname/clipdel" \
+        "${pkgdir?}/usr/bin/clipdel"
+    install -D -m755 \
+        "${srcdir?}/$_gitname/clipctl" \
+        "${pkgdir?}/usr/bin/clipctl"
+    install -D -m644 \
+        "${srcdir?}/$_gitname/init/clipmenud.service" \
+        "${pkgdir?}/usr/lib/systemd/user/clipmenud.service"
+}
