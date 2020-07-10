@@ -29,7 +29,6 @@ pkgver() {
 
 prepare() {
   cd $_pkgname
-  ./theme.sh "$THEME"
 }
 
 build() {
