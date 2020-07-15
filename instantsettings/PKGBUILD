@@ -7,7 +7,7 @@ pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
 arch=('any')
 license=('MIT')
-depends=('python' 'gtk3')
+depends=('instantmenu')
 makedepends=('git')
 provides=(instantsettings)
 conflicts=(instantsettings)
@@ -36,10 +36,8 @@ package() {
     mkdir -p "$pkgdir/usr/share/applications/"
     mv ./*.desktop "$pkgdir/usr/share/applications/"
 
-    mkdir -p "${pkgdir}"/usr/share/instantsettings
     mkdir -p "${pkgdir}"/usr/bin
-    mv mainsettings.py ${pkgdir}/usr/bin/instantsettings
+    mv settings.sh ${pkgdir}/usr/bin/instantsettings
     chmod 755 "${pkgdir}"/usr/bin/instantsettings
-    mv ./* "${pkgdir}"/usr/share/instantsettings/
     ln -s /usr/bin/instantsettings ${pkgdir}/usr/bin/instantos-control-center
 }
