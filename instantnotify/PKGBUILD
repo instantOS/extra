@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantnotify
 pkgname=$_pkgname
-pkgver=d400d26
+pkgver=202007201829
 pkgrel=1
 pkgdesc="notification center for instantOS"
 url="https://github.com/instantOS/instantNOTIFY"
@@ -33,6 +33,7 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
+    rm install.sh
     chmod +x ./*.sh
     for i in ./*.sh; do
         mv "$i" "${pkgdir}/usr/bin/${i%.sh}"
