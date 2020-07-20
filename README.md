@@ -2,7 +2,6 @@
 
 PKGBUILDS for instantOS packages
 
-## direct build: 
-```sh
-curl -s https://raw.githubusercontent.com/instantOS/extra/master/directbuild.sh | bash
-```
+## binaries
+
+built binaries for these are hosted over at [instantos.surge.sh](https://instantos.surge.sh)
