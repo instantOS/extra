@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=plymouth-theme-instantos
 pkgname=$_pkgname
-pkgver=202006151455
+pkgver=202007240158
 pkgrel=1
 pkgdesc="boot splash screen animation with the instantOS logo"
 url="https://github.com/paperbenni/bash"
@@ -34,5 +34,12 @@ package() {
     cd $_pkgname
     svn checkout https://github.com/instantOS/instantLOGO/trunk/boot
     mkdir -p ${pkgdir}/usr/share/plymouth/themes/instantos
+    rm boot/*.png
+    cd boot || exit 1
+    for i in {0..29}; do
+        echo "downloading frame $i"
+        wget https://media.githubusercontent.com/media/instantOS/instantLOGO/master/boot/progress-"$i".png
+    done
+    cd .. || exit 1
     mv ./boot/* ${pkgdir}/usr/share/plymouth/themes/instantos/
 }
