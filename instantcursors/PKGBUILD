@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantcursors
 pkgname=$_pkgname
-pkgver=20204208429760e
+pkgver=202007241120
 pkgrel=1
 pkgdesc="Cursors for instantOS"
 url="https://github.com/paperbenni/cursors"
