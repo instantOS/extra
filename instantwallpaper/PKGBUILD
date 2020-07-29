@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantwallpaper
 pkgname=$_pkgname
-pkgver=202006121511
+pkgver=202007282302
 pkgrel=1
 pkgdesc="wallpaper generator for instantOS"
 url="https://github.com/instantOS/instantwallpaper"
