@@ -102,6 +102,7 @@ package() {
         'rofi-git'
         'rangerplugins'
         'sideload'
+        'disper'
         'irox'
         'st-luke-git'
         'plymouth-git'
