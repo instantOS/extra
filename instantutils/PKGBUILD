@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantutils
 pkgname=$_pkgname
-pkgver=202008021732
+pkgver=202008051814
 pkgrel=1
 pkgdesc="core utilities for instantOS"
 url="https://github.com/instantOS/instantos"
@@ -58,6 +58,12 @@ package() {
     chmod +x ./*
     mv ./* "${pkgdir}"/usr/bin/
     cd ..
+
+    # keybinds offline cache
+
+    curl -s 'https://raw.githubusercontent.com/instantOS/instantos.github.io/master/youtube/hotkeys.md' |
+        sed 's/^\([^|#]\)/    \1/g' |
+        sed 's/^##*[ ]*/ /g' >${pkgdir}/usr/share/instantutils/keybinds
 
     cd xorg
     mv ./* ${pkgdir}/etc/X11/xorg.conf.d/
