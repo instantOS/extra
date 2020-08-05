@@ -52,7 +52,9 @@ package() {
         'imenu'
         'instantnotify'
         'instantsupport'
-        'grub-instantos')
+        'grub-instantos'
+        'paperbash'
+        'st')
 
     cd $_pkgname
 
