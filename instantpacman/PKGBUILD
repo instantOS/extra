@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantpacman
 pkgname=$_pkgname
-pkgver=202008051842
+pkgver=202008051854
 pkgrel=1
 pkgdesc="simple pacman GUI for instantOS"
 url="https://github.com/instantOS/instantpacman"
