@@ -48,6 +48,7 @@ plymouth*/plymouth*
 mpm/mpm
 instantsupport/instantsupport
 instantclipmenu/instantclipmenu
+instantpacman/instantpacman
 instantclipmenu/clipmenu
 instantnotify/instantnotify
 */.MTREE
