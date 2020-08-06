@@ -47,6 +47,7 @@ package() {
         'instantlock'
         'instantmenu'
         'instantwelcome'
+        'instantpacman'
         'instantsettings'
         'islide'
         'imenu'
