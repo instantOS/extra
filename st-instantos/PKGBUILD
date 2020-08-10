@@ -5,7 +5,7 @@
 
 pkgname=st-instantos
 _pkgname=st-instantos
-pkgver=0.8.2.r1148.222eac7
+pkgver=202008101238
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='https://github.com/instantOS/st-instantos.git'
@@ -44,5 +44,5 @@ package() {
   cd "${_pkgname}"
   make PREFIX=/usr DESTDIR="${pkgdir}" install
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+
 }
