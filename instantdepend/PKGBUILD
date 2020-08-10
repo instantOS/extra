@@ -104,7 +104,7 @@ package() {
         'sideload'
         'disper'
         'irox'
-        'st-luke-git'
+        'st-instantos'
         'plymouth-git'
         'plymouth-theme-instantos')
 

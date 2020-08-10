@@ -1,13 +1,10 @@
-# Contributor: mar77i <mar77i at mar77i dot ch>
-# Contributor: Gaetan Bisson <bisson@archlinux.org>
-# Contributor: Scytrin dai Kinthra <scytrin@gmail.com>
-# Maintainer: Stefan Husmann <stefan-husmann@t-online.de>
+# Maintainer: paperbenni <paperbenni@gmail.com>
 
 pkgname=st-instantos
 _pkgname=st-instantos
-pkgver=202008101238
+pkgver=202008101239
 pkgrel=1
-pkgdesc='Simple virtual terminal emulator for X'
+pkgdesc='st fork used by instantOS'
 url='https://github.com/instantOS/st-instantos.git'
 arch=('any')
 license=('MIT')
