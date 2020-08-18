@@ -48,6 +48,7 @@ package() {
 
     chmod +x ./setup/*
     mv ./setup "${pkgdir}"/usr/share/instantutils
+    curl -s 'https://raw.githubusercontent.com/instantOS/instantLOGO/master/description/thanks.txt' "${pkgdir}"/usr/share/instantutils/thanks.txt
     mv ./mirrors "${pkgdir}"/usr/share/instantutils
     echo "$pkgver" >"${pkgdir}"/usr/share/instantutils/version
 
