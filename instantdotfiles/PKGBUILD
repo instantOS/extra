@@ -4,14 +4,14 @@ pkgname=$_pkgname
 pkgver=202008161635
 pkgrel=1
 pkgdesc="dotfiles for instantOS"
-url="https://github.com/paperbenni/dotfiles"
+url="https://github.com/instantos/dotfiles"
 arch=('any')
 license=('MIT')
 depends=('sh' 'bash')
 makedepends=('git')
 provides=(instantdotfiles)
 conflicts=(instantdotfiles)
-source=("$_pkgname::git+https://github.com/paperbenni/dotfiles.git")
+source=("$_pkgname::git+https://github.com/instantos/dotfiles.git")
 
 sha256sums=('SKIP')
 
