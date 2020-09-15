@@ -94,12 +94,10 @@ build() {
 package() {
     depends+=('yay'
         'xdragon'
-        'urxvt-resize-font-git'
         'autojump'
         'youtube-dl'
         'paperbash'
         'zsh-syntax-highlighting'
-        'rxvt-unicode-pixbuf'
         'rofi-git'
         'rangerplugins'
         'sideload'
