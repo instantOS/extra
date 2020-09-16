@@ -65,8 +65,8 @@ depends=('picom-tryone-git'
     'xfce4-power-manager'
     'blueman'
     'dmidecode'
+    'light'
     'alacarte'
-    'imgur.sh'
     'gtk2-perl')
 
 makedepends=('bash' 'curl')
@@ -104,6 +104,7 @@ package() {
         'disper'
         'irox'
         'st-instantos'
+        'imgur.sh'
         'plymouth-git'
         'plymouth-theme-instantos')
 
