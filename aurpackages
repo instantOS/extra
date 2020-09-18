@@ -6,7 +6,8 @@ rofi-git
 yay
 pa-applet-git:pa-applet
 tkpacman
-pamac-aur
+pamac-aur-git:pamac-aur
+alttab-git:alttab
 picom-tryone-git
 imgur.sh
 libxft-bgra
