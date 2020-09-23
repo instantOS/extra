@@ -9,7 +9,7 @@ fi
 pkgname=instantwm
 
 _pkgname=instantwm-git
-pkgver=202005271719
+pkgver=202009231312
 pkgrel=1
 pkgdesc="window manager for instantOS"
 url="https://github.com/instantos/instantwm"
