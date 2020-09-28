@@ -37,7 +37,13 @@ package() {
     mv ./*.desktop "$pkgdir/usr/share/applications/"
 
     mkdir -p "${pkgdir}/usr/bin"
+    mkdir -p "${pkgdir}/usr/share/instantsettings"
+
     mv settings.sh "${pkgdir}/usr/bin/instantsettings"
+    chmod 755 ./utils/*.sh
+    mv ./utils/* "${pkgdir}/usr/share/instantsettings/"
+
     chmod 755 "${pkgdir}/usr/bin/instantsettings"
+
     ln -s "${pkgdir}/usr/bin/instantsettings" "${pkgdir}/usr/bin/instantos-control-center"
 }
