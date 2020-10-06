@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantsettings
 pkgname=$_pkgname
-pkgver=202009181117
+pkgver=202010061354
 pkgrel=1
 pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
@@ -41,8 +41,8 @@ package() {
 
     mv settings.sh "${pkgdir}/usr/bin/instantsettings"
     chmod 755 ./utils/*.sh
-    mv ./utils/* "${pkgdir}/usr/share/instantsettings/"
-    mv ./data/* "${pkgdir}/usr/share/instantsettings/"
+    mv ./utils "${pkgdir}/usr/share/instantsettings/"
+    mv ./data "${pkgdir}/usr/share/instantsettings/"
 
     chmod 755 "${pkgdir}/usr/bin/instantsettings"
 
