@@ -42,6 +42,7 @@ package() {
     mv settings.sh "${pkgdir}/usr/bin/instantsettings"
     chmod 755 ./utils/*.sh
     mv ./utils/* "${pkgdir}/usr/share/instantsettings/"
+    mv ./data/* "${pkgdir}/usr/share/instantsettings/"
 
     chmod 755 "${pkgdir}/usr/bin/instantsettings"
 
