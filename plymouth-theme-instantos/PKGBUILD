@@ -38,7 +38,7 @@ package() {
     cd boot || exit 1
     for i in {0..29}; do
         echo "downloading frame $i"
-        wget https://media.githubusercontent.com/media/instantOS/instantLOGO/master/boot/progress-"$i".png
+        wget https://raw.githubusercontent.com/instantOS/instantLOGO/master/boot/progress-"$i".png
     done
     cd .. || exit 1
     mv ./boot/* ${pkgdir}/usr/share/plymouth/themes/instantos/
