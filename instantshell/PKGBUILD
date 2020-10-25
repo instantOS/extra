@@ -37,6 +37,7 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
 
     cat zshrc > "${pkgdir}/usr/share/instantshell/zshrc"
+    echo "$pkgver" >"${pkgdir}"/usr/share/instantshell/version
     cat instantshell.sh > "${pkgdir}"/usr/bin/instantshell
 
     chmod 755 "${pkgdir}"/usr/bin/instantshell
