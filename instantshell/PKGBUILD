@@ -32,21 +32,13 @@ build() {
 
 package() {
     cd $_pkgname
-    bash fetch.sh
+
     mkdir -p ${pkgdir}/usr/share/instantshell
     mkdir -p ${pkgdir}/usr/bin
 
-    cat zshrc >>./ohmyzsh/templates/zshrc.zsh-template
-    rm zshrc
+    cat zshrc > "${pkgdir}/usr/share/instantshell/zshrc"
+    cat instantshell.sh > "${pkgdir}"/usr/bin/instantshell
 
-    mkdir -p ./ohmyzsh/custom/plugins/instantos
-    mv instantos.plugin.zsh ./ohmyzsh/custom/plugins/instantos/
-
-    mkdir -p ./ohmyzsh/custom/themes
-    mv instantos.zsh-theme ./ohmyzsh/custom/themes/
-
-    chmod +x install.sh
-    mv install.sh ${pkgdir}/usr/bin/instantshell
-
-    mv ohmyzsh/* ${pkgdir}/usr/share/instantshell
+    chmod 755 "${pkgdir}"/usr/bin/instantshell
 }
+
