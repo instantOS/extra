@@ -33,6 +33,7 @@ build() {
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     chmod +x *.sh
     mv *.sh ${pkgdir}/usr/bin/imenu
 }
