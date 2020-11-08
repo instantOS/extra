@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantlaunch
 pkgname=$_pkgname
-pkgver=202010271558
+pkgver=202010272200
 pkgrel=1
 pkgdesc="helper for appimages on instantOS"
 url="https://github.com/instantOS/instantLAUNCH"
@@ -42,5 +42,5 @@ package() {
     mv *.desktop "$pkgdir/usr/share/applications/"
 
     chmod +x *.sh
-    mv instantlaunch.sh ${pkgdir}/usr/bin/instantwelcome
+    mv instantlaunch.sh ${pkgdir}/usr/bin/instantlaunch
 }
