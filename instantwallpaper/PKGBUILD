@@ -46,4 +46,5 @@ package() {
     wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$MEDIARAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
     mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

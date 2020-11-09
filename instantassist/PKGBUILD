@@ -30,6 +30,7 @@ build() {
 
 package() {
     cd "$_pkgname"
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     export ASSISTPREFIX="$pkgdir"
     echo "$pkgdir"
     ./install.sh

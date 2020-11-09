@@ -36,5 +36,7 @@ package() {
 
     chmod +x *.sh
     mv *.sh ${pkgdir}/usr/bin/snap
+    curl -s https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt > LICENSE
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
 }

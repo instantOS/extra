@@ -40,5 +40,6 @@ package() {
 
     mv ibuild.sh ${pkgdir}/usr/bin/ibuild
     mv utils/* ${pkgdir}/usr/share/instanttools/
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
 }

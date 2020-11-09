@@ -41,5 +41,6 @@ package() {
     cat instantshell.sh > "${pkgdir}"/usr/bin/instantshell
 
     chmod 755 "${pkgdir}"/usr/bin/instantshell
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 

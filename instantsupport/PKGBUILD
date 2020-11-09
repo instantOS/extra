@@ -35,4 +35,5 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     chmod +x *.sh
     mv instantsupport.sh ${pkgdir}/usr/bin/instantsupport
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

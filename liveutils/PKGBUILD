@@ -42,4 +42,5 @@ package() {
     mv installapplet.py ${pkgdir}/usr/bin/installapplet
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
     mv assets/*.jpg ${pkgdir}/usr/share/liveutils/
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

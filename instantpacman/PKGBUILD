@@ -41,4 +41,5 @@ package() {
         mv "${i%.sh}" "${pkgdir}/usr/bin/"
     done
 
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

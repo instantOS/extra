@@ -37,4 +37,6 @@ package() {
   mkdir -p ${pkgdir}/usr/bin
   mv islide "${pkgdir}"/usr/bin/islide
   chmod +x "${pkgdir}"/usr/bin/islide
+  install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
 }

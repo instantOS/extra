@@ -44,6 +44,8 @@ package() {
     mv ./instantutils.sh ${pkgdir}/usr/bin/instantutils
     mv ./installinstantos.sh ${pkgdir}/usr/bin/installinstantos
 
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
     mv ./*.sh "${pkgdir}"/usr/share/instantutils/
 
     chmod +x ./setup/*

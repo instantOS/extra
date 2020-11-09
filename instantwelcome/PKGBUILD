@@ -40,4 +40,5 @@ package() {
 
     chmod +x *.sh
     mv instantwelcome.sh ${pkgdir}/usr/bin/instantwelcome
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

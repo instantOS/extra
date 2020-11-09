@@ -47,4 +47,5 @@ package() {
     chmod 755 "${pkgdir}/usr/bin/instantsettings"
 
     ln -s "${pkgdir}/usr/bin/instantsettings" "${pkgdir}/usr/bin/instantos-control-center"
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

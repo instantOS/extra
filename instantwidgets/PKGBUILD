@@ -35,4 +35,5 @@ package() {
     mkdir -p ${pkgdir}/usr/share/instantwidgets
     rm README.md
     mv ./* ${pkgdir}/usr/share/instantwidgets/
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

@@ -43,4 +43,5 @@ package() {
 
     chmod +x *.sh
     mv instantlaunch.sh ${pkgdir}/usr/bin/instantlaunch
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

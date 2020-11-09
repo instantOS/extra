@@ -35,5 +35,6 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     chmod +x instantconf
     mv instantconf ${pkgdir}/usr/bin/instantconf
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     ln -s /usr/bin/instantconf ${pkgdir}/usr/bin/iconf
 }

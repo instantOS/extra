@@ -42,5 +42,6 @@ package() {
     mv instantdotfiles ${pkgdir}/usr/bin/instantdotfiles
 
     mv ./* ${pkgdir}/usr/share/instantdotfiles/
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
 }

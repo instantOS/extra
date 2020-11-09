@@ -35,4 +35,5 @@ package() {
     mkdir -p ${pkgdir}/usr/bin
     chmod +x *.sh
     mv mpm.sh ${pkgdir}/usr/bin/mpm
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

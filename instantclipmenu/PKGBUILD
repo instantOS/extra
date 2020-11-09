@@ -42,4 +42,6 @@ package() {
     install -D -m644 \
         "${srcdir?}/$_gitname/init/clipmenud.service" \
         "${pkgdir?}/usr/lib/systemd/user/clipmenud.service"
+    curl -s https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt > LICENSE
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
