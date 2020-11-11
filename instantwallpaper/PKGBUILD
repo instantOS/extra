@@ -20,16 +20,6 @@ pkgver() {
     echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-    cd $_pkgname
-    echo "no prepare"
-}
-
-build() {
-    cd $_pkgname
-    echo "no build"
-}
-
 package() {
     RAW="https://raw.githubusercontent.com/instantOS/instantLOGO/master"
     MEDIARAW="https://raw.githubusercontent.com/instantOS/instantLOGO/master"

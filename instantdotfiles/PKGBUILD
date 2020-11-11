@@ -20,15 +20,6 @@ pkgver() {
     echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-    cd $_pkgname
-}
-
-build() {
-    cd $_pkgname
-    echo "no build"
-}
-
 package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin

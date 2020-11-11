@@ -20,14 +20,6 @@ pkgver() {
     echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-    echo "no prep"
-}
-
-build() {
-    echo "no build"
-}
-
 package() {
     cd "$_pkgname"
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"

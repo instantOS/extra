@@ -16,14 +16,6 @@ pkgver() {
     echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-    echo "no prepare"
-}
-
-build() {
-    echo "no build"
-}
-
 package() {
     rm -rf rangerplugins
 

@@ -21,16 +21,6 @@ pkgver() {
     echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-    cd $_pkgname
-    echo "no prepare"
-}
-
-build() {
-    cd $_pkgname
-    echo "no build"
-}
-
 package() {
 
     depends+=('instantdotfiles'

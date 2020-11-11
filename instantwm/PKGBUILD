@@ -29,10 +29,6 @@ pkgver() {
   echo "$(date '+%Y%m%d%H%M')"
 }
 
-prepare() {
-  cd $_pkgname
-}
-
 build() {
   cd $_pkgname
   make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
