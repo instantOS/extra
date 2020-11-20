@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantsearch
 pkgname=$_pkgname
-pkgver=202011100024
+pkgver=202011192339
 pkgrel=1
 pkgdesc="simple file search GUI for instantOS"
 url="https://github.com/instantOS/instantsearch"
