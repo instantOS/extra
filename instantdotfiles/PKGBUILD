@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantdotfiles
 pkgname=$_pkgname
-pkgver=202008161635
+pkgver=202011262012
 pkgrel=1
 pkgdesc="dotfiles for instantOS"
 url="https://github.com/instantos/dotfiles"
@@ -32,7 +32,8 @@ package() {
 
     mv instantdotfiles ${pkgdir}/usr/bin/instantdotfiles
 
-    mv ./* ${pkgdir}/usr/share/instantdotfiles/
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    rm LICENSE
+    mv ./* ${pkgdir}/usr/share/instantdotfiles/
 
 }
