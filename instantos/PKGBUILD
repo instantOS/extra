@@ -39,6 +39,7 @@ package() {
         'instantwelcome'
         'instantpacman'
         'instantsettings'
+        'instantsearch'
         'islide'
         'imenu'
         'instantnotify'
