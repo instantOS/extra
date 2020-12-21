@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantsearch
 pkgname=$_pkgname
-pkgver=202012212149
+pkgver=202012212245
 pkgrel=1
 pkgdesc="simple file search GUI for instantOS"
 url="https://github.com/instantOS/instantsearch"
@@ -28,5 +28,6 @@ package() {
     cp instantsearch.sh "${pkgdir}/usr/bin/instantsearch"
     cp update-instantsearch.sh "${pkgdir}/usr/bin/update-instantsearch"
 
+    install -m644 -D instantsearch.1 "${pkgdir}/usr/share/man/man1/instantsearch.1"
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
