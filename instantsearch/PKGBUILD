@@ -26,6 +26,7 @@ package() {
 
     chmod 755 *.sh
     cp instantsearch.sh "${pkgdir}/usr/bin/instantsearch"
+    cp update-instantsearch "${pkgdir}/usr/bin/update-instantsearch"
 
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
