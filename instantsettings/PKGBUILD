@@ -22,20 +22,7 @@ pkgver() {
 
 package() {
     cd $_pkgname
-
-    mkdir -p "$pkgdir/usr/share/applications/"
-    mv ./*.desktop "$pkgdir/usr/share/applications/"
-
-    mkdir -p "${pkgdir}/usr/bin"
-    mkdir -p "${pkgdir}/usr/share/instantsettings"
-
-    mv settings.sh "${pkgdir}/usr/bin/instantsettings"
-    chmod 755 ./utils/*.sh
-    mv ./utils "${pkgdir}/usr/share/instantsettings/"
-    mv ./data "${pkgdir}/usr/share/instantsettings/"
-
-    chmod 755 "${pkgdir}/usr/bin/instantsettings"
-
+    make PREFIX=/usr/ DESTDIR="$pkgdir" install
     ln -s "${pkgdir}/usr/bin/instantsettings" "${pkgdir}/usr/bin/instantos-control-center"
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
