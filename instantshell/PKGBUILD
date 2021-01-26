@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantshell
 pkgname=$_pkgname
-pkgver=20204208429760e
+pkgver=202101221711
 pkgrel=1
 pkgdesc="zsh shell config for instantOS"
 url="https://github.com/instantOS/instantSHELL"

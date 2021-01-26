@@ -4,6 +4,7 @@
 */*.pkg.tar.xz
 */*.pkg.tar.zst
 */*.tar.xz
+.nvimlog
 
 build
 build/*

@@ -2,7 +2,7 @@
 
 pkgname=st-instantos
 _pkgname=st-instantos
-pkgver=202008101239
+pkgver=202101232339
 pkgrel=1
 pkgdesc='st fork used by instantOS'
 url='https://github.com/instantOS/st-instantos.git'
