@@ -14,12 +14,9 @@ makedepends=('ncurses' 'libxext' 'git')
 provides=('st')
 conflicts=(st)
 
-
 # include config.h and any patches you want to have applied here
 source=("${_pkgname}::git+$url")
 sha256sums=('SKIP')
-provides=('st')
-conflicts=('st')
 
 pkgver() {
   cd $_pkgname
