@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantutils
 pkgname=$_pkgname
-pkgver=202012102317
+pkgver=202101261153
 pkgrel=1
 pkgdesc="core utilities for instantOS"
 url="https://github.com/instantOS/instantos"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('sh' 'acpi' 'wget' 'feh' 'dash' 'xdotool' 'instantmenu' 'instantwm' 'imenu' 'instantassist')
 makedepends=('git')
 provides=(instantutils)

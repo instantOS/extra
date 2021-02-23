@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 pkgname=instantassist
 _pkgname=instantassist
-pkgver=202012231641
+pkgver=202101272338
 pkgrel=1
 pkgdesc="a bunch of shortcuts for instantOS"
 url="https://github.com/instantos/instantassist"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 options=(zipman)
 depends=('bash' 'instantmenu')
 makedepends=('git')

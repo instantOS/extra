@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=imenu
 pkgname=$_pkgname
-pkgver=202012102100
+pkgver=202101261335
 pkgrel=1
 pkgdesc="simple ui scripts using instantMENU"
 url="https://github.com/instantOS/imenu"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('instantmenu')
 makedepends=('git')
 provides=(imenu)

@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="meta package for optional instantOS extras"
 url="https://github.com/instantOS/instantMETA"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('firefox')
 
 makedepends=('bash' 'curl')

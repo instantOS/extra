@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantsettings
 pkgname=$_pkgname
-pkgver=202012151348
+pkgver=202101311702
 pkgrel=1
 pkgdesc="simple settings app for instantOS"
 url="https://github.com/instantOS/instantsettings"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('instantmenu')
 makedepends=('git')
 provides=(instantsettings)

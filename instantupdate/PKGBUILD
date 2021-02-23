@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantupdate
 pkgname=$_pkgname
-pkgver=202101181339
+pkgver=202101261238
 pkgrel=1
 pkgdesc="instantOS updater"
 url="https://github.com/instantOS/instantupdate"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('instantmenu' 'pacman')
 makedepends=('git')
 provides=(instantupdate)

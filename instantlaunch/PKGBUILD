@@ -1,12 +1,12 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantlaunch
 pkgname=$_pkgname
-pkgver=202010272200
+pkgver=202101281509
 pkgrel=1
 pkgdesc="helper for appimages on instantOS"
 url="https://github.com/instantOS/instantLAUNCH"
 arch=('any')
-license=('MIT')
+license=('GPL2')
 depends=('bash' 'instantmenu')
 makedepends=('git')
 provides=(instantlaunch)
