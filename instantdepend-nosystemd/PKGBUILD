@@ -1,9 +1,9 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
-_pkgname=instantdepend
+_pkgname=instantdepend-nosystemd
 pkgname=$_pkgname
 pkgver=20204923be4c9bc
 pkgrel=1
-pkgdesc="meta package for instantOS dependencies"
+pkgdesc="meta package for instantOS dependencies for systems without systemd"
 url="https://github.com/instantOS/instantMETA"
 arch=('any')
 license=('GPL2')
@@ -96,7 +96,6 @@ package() {
         'st-instantos'
         'golaunch'
         'imgur.sh'
-        'udevwait'
         'plymouth-git'
         'plymouth-theme-instantos')
 
