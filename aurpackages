@@ -3,7 +3,9 @@ libinput-gestures
 autojump
 yay
 pa-applet-git:pa-applet
-pamac-aur-git
+pamac-all
+snapd
+snapd-glib
 alttab-git:alttab
 picom-tryone-git
 imgur.sh
