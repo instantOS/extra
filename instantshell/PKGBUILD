@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantshell
 pkgname=$_pkgname
-pkgver=202101221711
+pkgver=202102251655
 pkgrel=1
 pkgdesc="zsh shell config for instantOS"
 url="https://github.com/instantOS/instantSHELL"
@@ -22,15 +22,7 @@ pkgver() {
 
 package() {
     cd $_pkgname
-
-    mkdir -p ${pkgdir}/usr/share/instantshell
-    mkdir -p ${pkgdir}/usr/bin
-
-    cat zshrc > "${pkgdir}/usr/share/instantshell/zshrc"
-    echo "$pkgver" >"${pkgdir}"/usr/share/instantshell/version
-    cat instantshell.sh > "${pkgdir}"/usr/bin/instantshell
-
-    chmod 755 "${pkgdir}"/usr/bin/instantshell
+    make PREFIX=/usr/ DESTDIR="$pkgdir" install
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 

@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantnotify
 pkgname=$_pkgname
-pkgver=202011290039
+pkgver=202102251429
 pkgrel=1
 pkgdesc="notification center for instantOS"
 url="https://github.com/instantOS/instantNOTIFY"
@@ -28,6 +28,8 @@ package() {
     for i in ./*.sh; do
         mv "$i" "${pkgdir}/usr/bin/${i%.sh}"
     done
+    mkdir -p "${pkgdir}/usr/share/instantnotify"
+    cp defaults/* "${pkgdir}/usr/share/instantnotify"
 
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
