@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantwidgets
 pkgname=$_pkgname
-pkgver=20204208429760e
+pkgver=202102251707
 pkgrel=1
 pkgdesc="Conky widgets for instantOS"
 url="https://github.com/instantOS/instantWIDGETS"
@@ -24,6 +24,7 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantwidgets
     rm README.md
-    mv ./* ${pkgdir}/usr/share/instantwidgets/
+    [ -e ./.git ] && rm -rf .git
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    mv ./* ${pkgdir}/usr/share/instantwidgets/
 }
