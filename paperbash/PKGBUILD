@@ -24,6 +24,6 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/paperbash
     chmod +x *.sh
-    mv ./* ${pkgdir}/usr/share/paperbash/
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    mv ./* ${pkgdir}/usr/share/paperbash/
 }
