@@ -44,8 +44,7 @@ package() {
         'islide'
         'imenu'
         'instantnotify'
-        'instantsupport'
-        'grub-instantos')
+        'instantsupport')
 
     cd $_pkgname
 
