@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantthemes
 pkgname=$_pkgname
-pkgver=20204208429760e
+pkgver=202103311749
 pkgrel=1
 pkgdesc="theme files for instantOS"
 url="https://github.com/instantOS/instantTHEMES"
@@ -22,12 +22,7 @@ pkgver() {
 
 package() {
     cd $_pkgname
-    mkdir -p ${pkgdir}/usr/share/instantthemes
-    mkdir -p ${pkgdir}/usr/bin
-
-    chmod +x *.sh
-    chmod +x instantthemes
-    mv instantthemes ${pkgdir}/usr/bin
-    rm README.md
-    mv ./* ${pkgdir}/usr/share/instantthemes/
+    
+    make PREFIX=/usr/ DESTDIR="$pkgdir" install
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
