@@ -28,13 +28,14 @@ package() {
     mkdir -p ${pkgdir}/usr/share/backgrounds
     mkdir -p ${pkgdir}/usr/share/instantwallpaper
 
-    mv wallutils.sh ${pkgdir}/usr/share/instantwallpaper
     wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$MEDIARAW/wallpaper/defaultwall.png"
     wget -qO ${pkgdir}/usr/share/backgrounds/readme.jpg "$MEDIARAW/wallpaper/readme.jpg"
     # ascii art for neofetch
     wget -qO ${pkgdir}/usr/share/instantwallpaper/ascii.txt "$RAW/ascii.txt"
     wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$MEDIARAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
+
+    mv wallutils.sh ${pkgdir}/usr/share/instantwallpaper
     mv wall.sh ${pkgdir}/usr/bin/instantwallpaper
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
