@@ -1,0 +1,29 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
+_pkgname=commandfinder
+pkgname=$_pkgname
+pkgver=202106012333
+pkgrel=1
+pkgdesc="A command-not-found handler for arch linux based systems that is light as air"
+url="https://github.com/instantOS/commandfinder"
+arch=('any')
+license=('GPL2')
+depends=('ripgrep' 'pkgfile')
+makedepends=('git')
+provides=(commandfinder)
+conflicts=(commandfinder)
+source=("$_pkgname::git+https://github.com/instantOS/commandfinder.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+package() {
+    cd $_pkgname
+
+    mkdir -p "${pkgdir}/usr/bin"
+    make PREFIX=/usr/ DESTDIR="$pkgdir" install
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
