@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantconf
 pkgname=$_pkgname
-pkgver=202004291748
+pkgver=202105271857
 pkgrel=1
 pkgdesc="simple config system for instantOS"
 url="https://github.com/instantOS/instantconf"

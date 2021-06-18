@@ -2,7 +2,7 @@
 
 pkgname=instantlock
 _pkgname=$pkgname
-pkgver=202011252203
+pkgver=202105221416
 pkgrel=1
 pkgdesc='lock screen for instantOS'
 url='https://github.com/instantOS/instantLOCK.git'
