@@ -4,6 +4,8 @@ autojump
 yay
 pa-applet-git:pa-applet
 pamac-all
+libpamac-full
+archlinux-appstream-data-pamac
 snapd
 snapd-glib
 alttab-git:alttab
