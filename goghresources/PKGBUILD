@@ -1,0 +1,31 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
+_pkgname=goghresources
+pkgname=$_pkgname
+pkgver=202101181339
+pkgrel=1
+pkgdesc="Gogh but for xresources"
+url="https://github.com/paperbenni/goghresources"
+arch=('any')
+license=('GPL2')
+depends=('fzf' 'git')
+makedepends=('git')
+provides=(goghresources)
+conflicts=(goghresources)
+source=("$_pkgname::git+https://github.com/paperbenni/goghresources.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p "${pkgdir}/usr/bin"
+
+    chmod 755 *.sh
+    cp goghresources.sh "${pkgdir}/usr/bin/goghresources"
+
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
