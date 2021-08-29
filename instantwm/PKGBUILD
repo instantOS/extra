@@ -3,7 +3,7 @@
 pkgname=instantwm
 
 _pkgname=instantwm-git
-pkgver=202105090133
+pkgver=202108292126
 pkgrel=1
 pkgdesc="window manager for instantOS"
 url="https://github.com/instantos/instantwm"
@@ -30,6 +30,7 @@ build() {
 
 package() {
   cd $_pkgname
+  rm config.h
   make PREFIX=/usr DESTDIR="$pkgdir" install
   install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
