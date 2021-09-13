@@ -21,8 +21,8 @@ pkgver() {
 }
 
 package() {
-    RAW="https://raw.githubusercontent.com/instantOS/instantLOGO/master"
-    MEDIARAW="https://raw.githubusercontent.com/instantOS/instantLOGO/master"
+    RAW="https://raw.githubusercontent.com/instantOS/instantLOGO/main"
+    MEDIARAW="https://raw.githubusercontent.com/instantOS/instantLOGO/main"
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/bin
     mkdir -p ${pkgdir}/usr/share/backgrounds
