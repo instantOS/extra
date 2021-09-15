@@ -1,0 +1,31 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
+_pkgname=instantpass
+pkgname=$_pkgname
+pkgver=202109151527
+pkgrel=1
+pkgdesc="a GUI for pass, the unix password manager"
+url="https://github.com/instantOS/instantpass"
+arch=('any')
+license=('GPL2')
+depends=('instantmenu' 'pass' 'pass-otp' 'instantutils')
+makedepends=('git')
+provides=(instantsearch)
+conflicts=(instantsearch)
+source=("$_pkgname::git+https://github.com/instantOS/instantpass.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+package() {
+    cd $_pkgname
+    mkdir -p "${pkgdir}/usr/bin"
+
+    chmod 755 *.sh
+    cp instantpass.sh "${pkgdir}/usr/bin/instantpass"
+
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
