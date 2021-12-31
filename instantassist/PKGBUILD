@@ -8,7 +8,7 @@ url="https://github.com/instantos/instantassist"
 arch=('any')
 license=('GPL2')
 options=(zipman)
-depends=('bash' 'instantmenu' 'imagemagick' 'slop' 'xclip')
+depends=('bash' 'instantmenu' 'imagemagick' 'slop' 'xclip' 'pamixer')
 makedepends=('git')
 provides=('instantassist')
 
