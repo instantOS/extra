@@ -36,6 +36,6 @@ package() {
     mkdir -p ${pkgdir}/usr/share/grub/themes/instantos
     mkdir -p ${pkgdir}/boot/grub/fonts
     rm README.*
-    mv ./*.pf2 ${pkgdir}/boot/grub/fonts/
-    mv ./* ${pkgdir}/usr/share/grub/themes/instantos
+    mv ./theme/*.pf2 ${pkgdir}/boot/grub/fonts/
+    mv ./theme/* ${pkgdir}/usr/share/grub/themes/instantos
 }
