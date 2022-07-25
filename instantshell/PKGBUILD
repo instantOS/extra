@@ -8,7 +8,7 @@ url="https://github.com/instantOS/instantSHELL"
 arch=('any')
 license=('GPL2')
 depends=('sh' 'zsh' 'bash' 'git' 'starship' 'commandfinder')
-makedepends=('git')
+makedepends=('git' 'zsh')
 provides=(instantshell)
 conflicts=(instantshell)
 source=("$_pkgname::git+https://github.com/instantOS/instantshell.git")
@@ -23,6 +23,10 @@ pkgver() {
 package() {
     cd $_pkgname
     make PREFIX=/usr/ DESTDIR="$pkgdir" install
+    cd "$pkgdir/usr/share/instantshell"
+    git clone --depth=1 https://github.com/mattmc3/antidote
+
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -m644 -D "$pkgdir/usr/share/instantshell/antidote/LICENSE" "$pkgdir/usr/share/licenses/antidote-zsh/LICENSE"
 }
 
