@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantshell
 pkgname=$_pkgname
-pkgver=202105271756
+pkgver=202208012014
 pkgrel=1
 pkgdesc="zsh shell config for instantOS"
 url="https://github.com/instantOS/instantSHELL"
@@ -23,10 +23,12 @@ pkgver() {
 package() {
     cd $_pkgname
     make PREFIX=/usr/ DESTDIR="$pkgdir" install
-    cd "$pkgdir/usr/share/instantshell"
-    git clone --depth=1 https://github.com/mattmc3/antidote
+
+    git clone --depth=1 https://github.com/mattmc3/antidote "$pkgdir/usr/share/instantshell/antidote"
 
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     install -m644 -D "$pkgdir/usr/share/instantshell/antidote/LICENSE" "$pkgdir/usr/share/licenses/antidote-zsh/LICENSE"
+
+
 }
 
