@@ -7,11 +7,11 @@ find-cursor
 golaunch
 imgur.sh
 libinput-gestures
-libpamac-full
+libpamac-nosnap
 libxft-bgra
 otf-nerd-fonts-fira-code
 pa-applet-git:pa-applet
-pamac-all
+pamac-nosnap
 picom-tryone-git
 plymouth-git
 skippy-xd-git
