@@ -2,10 +2,10 @@
 
 pkgname=instantclipmenu
 _gitname=clipmenu
-pkgver=6.2.0.r10.ga3f0897
+pkgver=6.2.0.r18.g920c23b
 pkgrel=1
 pkgdesc='Clipboard management using instantmenu'
-url='http://github.com/cdown/clipmenu'
+url='https://github.com/cdown/clipmenu.git'
 arch=('any')
 license=('Public Domain')
 depends=(instantmenu xsel clipnotify)
@@ -13,7 +13,7 @@ provides=(clipmenu instantclipmenu)
 conflicts=(clipmenu)
 makedepends=(git)
 
-source=(git://github.com/cdown/clipmenu.git)
+source=('git+https://github.com/cdown/clipmenu.git')
 md5sums=('SKIP')
 
 pkgver() {
