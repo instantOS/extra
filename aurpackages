@@ -7,15 +7,13 @@ find-cursor
 golaunch
 imgur.sh
 libpamac-nosnap
-libxft-bgra
+libxft-bgra-git:libxft-bgra
 otf-nerd-fonts-fira-code
 pa-applet-git:pa-applet
 pamac-nosnap
 picom-tryone-git
 plymouth-git
 skippy-xd-git
-snapd
-snapd-glib
 surf
 tzupdate
 yay
