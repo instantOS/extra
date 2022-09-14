@@ -10,7 +10,7 @@ license=('GPL')
 url="https://github.com/jun7/rox-filer"
 depends=('sh' 'libsm' 'gtk2')
 makedepends=('python2' 'libxslt' 'git')
-source=("git://github.com/instantos/rox-filer")
+source=("git+https://github.com/instantOS/rox-filer.git")
 md5sums=('SKIP')
 
 pkgver(){
