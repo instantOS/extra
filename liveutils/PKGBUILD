@@ -35,4 +35,8 @@ package() {
     mv wallpaper.png ${pkgdir}/usr/share/liveutils/
     mv assets/*.jpg ${pkgdir}/usr/share/liveutils/
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+    mkdir -p "$pkgdir/usr/share/applications/"
+    chmod 644 ./*.desktop
+    mv ./*.desktop "$pkgdir/usr/share/applications/"
 }
