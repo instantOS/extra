@@ -42,6 +42,7 @@ package() {
         'instantsearch'
         'instantupdate'
         'instantlaunch'
+        'grub-instantos'
         'islide'
         'imenu'
         'instantnotify'
