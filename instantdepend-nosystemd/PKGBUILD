@@ -89,7 +89,7 @@ package() {
         'zsh-syntax-highlighting'
         'rofi'
         'rangerplugins'
-        'irox'
+        'rox-filer-hugeicons'
         'st-instantos'
         'golaunch'
         'imgur.sh'
