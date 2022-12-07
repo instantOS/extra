@@ -89,7 +89,6 @@ package() {
         'zsh-syntax-highlighting'
         'rofi'
         'rangerplugins'
-        'disper'
         'irox'
         'st-instantos'
         'golaunch'
