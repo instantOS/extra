@@ -31,7 +31,7 @@ package() {
         'instantwidgets'
         'instantcursors'
         'instantshell'
-        'otf-nerd-fonts-fira-code'
+        'ttf-nerd-fonts-fira-code'
         'instantconf'
         'instantwm'
         'instantlock'
