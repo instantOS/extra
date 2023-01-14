@@ -7,7 +7,7 @@ pkgdesc="meta package for instantOS dependencies"
 url="https://github.com/instantOS/instantMETA"
 arch=('any')
 license=('GPL2')
-depends=('picom-tryone-git'
+depends=('picom'
     'arc-gtk-theme'
     'xorg-xrandr'
     'slop'
@@ -91,7 +91,7 @@ package() {
         'zsh-syntax-highlighting'
         'rofi'
         'rangerplugins'
-        'irox'
+        'rox-filer-hugeicons'
         'st-instantos'
         'golaunch'
         'imgur.sh'
