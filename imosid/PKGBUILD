@@ -1,16 +1,16 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=imosid
 pkgname=$_pkgname
-pkgver=202107011832
+pkgver=202302192058
 pkgrel=1
 pkgdesc="instant manager of sections in dotfiles"
-url="https://github.com/instantOS/imosid"
+url="https://github.com/instantOS/imosid-next"
 arch=('any')
 license=('GPL2')
 makedepends=('git' 'cargo')
 provides=(imosid)
 conflicts=(imosid)
-source=("$_pkgname::git+https://github.com/instantOS/imosid.git")
+source=("$_pkgname::git+https://github.com/instantOS/imosid-next.git")
 
 sha256sums=('SKIP')
 
