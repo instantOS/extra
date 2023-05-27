@@ -1,13 +1,12 @@
 alttab-git:alttab
-archlinux-appstream-data-pamac
 autojump-rs
 dasel
 find-cursor
 golaunch
 imgur.sh
 libpamac-nosnap
-pa-applet-git:pa-applet
 pamac-nosnap
+pa-applet-git:pa-applet
 plymouth-git
 skippy-xd-git
 surf
