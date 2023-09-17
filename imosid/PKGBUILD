@@ -4,19 +4,22 @@ pkgname=$_pkgname
 pkgver=202302192058
 pkgrel=1
 pkgdesc="instant manager of sections in dotfiles"
-url="https://github.com/instantOS/imosid-next"
+url="https://github.com/instantOS/imosid"
 arch=('any')
 license=('GPL2')
 makedepends=('git' 'cargo')
 provides=(imosid)
 conflicts=(imosid)
-source=("$_pkgname::git+https://github.com/instantOS/imosid-next.git")
+source=("$_pkgname::git+https://github.com/instantOS/imosid.git")
 
 sha256sums=('SKIP')
 
+set -e
+
 pkgver() {
     cd $_pkgname
-    echo "$(date '+%Y%m%d%H%M')"
+    # TODO: get version from cargo
+    date '+%Y%m%d%H%M'
 }
 
 build() {
