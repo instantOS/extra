@@ -22,14 +22,5 @@ pkgver() {
 
 package() {
     cd $_pkgname
-    mkdir -p ${pkgdir}/usr/share/instantdotfiles
-    git rev-parse --short HEAD > ${pkgdir}/usr/share/instantdotfiles/versionhash
-    chmod +x *.sh
-    chmod +x fonts/*.sh
-
-    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-    rm LICENSE
-
-    mv ./* ${pkgdir}/usr/share/instantdotfiles/
-
+    make PREFIX=/usr DESTDIR="$pkgdir" install
 }
