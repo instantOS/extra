@@ -5,11 +5,12 @@ find-cursor
 golaunch
 imgur.sh
 libpamac-nosnap
-pa-applet-git:pa-applet
 pamac-nosnap
+pa-applet-git:pa-applet
 plymouth-git
 skippy-xd-git
 surf
 tzupdate
 yay
 rox-filer-hugeicons
+qogir-gtk-theme

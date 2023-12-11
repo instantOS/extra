@@ -86,7 +86,6 @@ package() {
     depends+=('yay'
         'xdragon'
         'autojump'
-        'youtube-dl'
         'paperbash'
         'zsh-syntax-highlighting'
         'rofi'

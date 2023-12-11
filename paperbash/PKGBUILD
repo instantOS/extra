@@ -1,7 +1,7 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=paperbash
 pkgname=$_pkgname
-pkgver=d400d26
+pkgver=202309161910
 pkgrel=1
 pkgdesc="it's like pip but bash and a little shitty"
 url="https://github.com/paperbenni/bash"
@@ -15,15 +15,17 @@ source=("$_pkgname::git+https://github.com/paperbenni/bash.git")
 
 sha256sums=('SKIP')
 
+set -e
+
 pkgver() {
     cd $_pkgname
-    echo "$(date '+%Y%m%d%H%M')"
+    date '+%Y%m%d%H%M'
 }
 
 package() {
     cd $_pkgname
-    mkdir -p ${pkgdir}/usr/share/paperbash
-    chmod +x *.sh
+    mkdir -p "${pkgdir}"/usr/share/paperbash
+    chmod +x ./*.sh
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-    mv ./* ${pkgdir}/usr/share/paperbash/
+    mv ./* "${pkgdir}"/usr/share/paperbash/
 }

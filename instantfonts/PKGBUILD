@@ -1,35 +1,34 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantfonts
 pkgname=$_pkgname
-pkgver=20205001
+pkgver=3.0.2
 pkgrel=1
 pkgdesc="patched fonts for instantOS"
 arch=('any')
 license=('MIT')
 depends=('sh')
-makedepends=('wget' 'git')
+makedepends=('wget' 'git' 'atool')
 provides=(instantfonts)
 conflicts=(instantfonts)
 
-pkgver() {
-    echo "$(date '+%Y%m%d%H%M')"
-}
+set -e
 
 prepare() {
     mkdir -p $_pkgname
-    cd $_pkgname
+    cd "$_pkgname"
 }
 
 build() {
-    cd $_pkgname
+    cd "$_pkgname"
     echo "fetching fonts"
-    wget -q "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf"
-    wget -q "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf"
+    wget -q "https://github.com/ryanoasis/nerd-fonts/releases/download/v$pkgver/SourceCodePro.tar.xz"
+    atool -x ./*.tar.xz
 }
 
 package() {
     cd $_pkgname
-    mkdir -p ${pkgdir}/usr/share/fonts/instantfonts
-    chmod 644 *.ttf
-    mv *.ttf ${pkgdir}/usr/share/fonts/instantfonts/
+    mkdir -p "${pkgdir}"/usr/share/fonts/instantfonts
+    mv ./*/*.ttf .
+    chmod 644 ./*.ttf
+    mv ./*.ttf "${pkgdir}"/usr/share/fonts/instantfonts/
 }
