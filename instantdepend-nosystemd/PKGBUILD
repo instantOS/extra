@@ -89,7 +89,7 @@ package() {
         'rangerplugins'
         'rox-filer-hugeicons'
         'st-instantos'
-        'golaunch'
+        'i3-wm'
         'imgur.sh'
         'plymouth'
         'plymouth-theme-instantos')
