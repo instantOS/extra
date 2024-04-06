@@ -64,7 +64,6 @@ depends=('picom'
     'xfce4-power-manager'
     'blueman'
     'dmidecode'
-    'light'
     'alacarte'
     'gtk2-perl')
 
