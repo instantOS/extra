@@ -92,7 +92,7 @@ package() {
         'st-instantos'
         'golaunch'
         'imgur.sh'
-        'plymouth-git'
+        'plymouth'
         'plymouth-theme-instantos')
 
     cd $_pkgname

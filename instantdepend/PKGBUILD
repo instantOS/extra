@@ -95,7 +95,7 @@ package() {
         'golaunch'
         'imgur.sh'
         'udevwait'
-        'plymouth-git'
+        'plymouth'
         'plymouth-theme-instantos')
 
     cd $_pkgname
