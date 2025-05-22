@@ -30,7 +30,8 @@ package() {
 
     wget -qO ${pkgdir}/usr/share/backgrounds/instant.png "$MEDIARAW/wallpaper/defaultwall.png"
     wget -qO ${pkgdir}/usr/share/backgrounds/readme.jpg "$MEDIARAW/wallpaper/readme.jpg"
-    # ascii art for neofetch
+    # ascii art for fastfetch
+    # TODO: get added to fastfetch
     wget -qO ${pkgdir}/usr/share/instantwallpaper/ascii.txt "$RAW/ascii.txt"
     wget -qO ${pkgdir}/usr/share/instantwallpaper/defaultphoto.png "$MEDIARAW/wallpaper/defaultphoto.png"
     chmod +x *.sh
