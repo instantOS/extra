@@ -65,7 +65,7 @@ depends=('picom'
     'blueman'
     'dmidecode'
     'alacarte'
-    'gtk2-perl')
+    )
 
 makedepends=('bash' 'curl')
 provides=(instantdepend)
