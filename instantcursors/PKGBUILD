@@ -27,6 +27,6 @@ package() {
     rm install.sh
     rm -rf .git
     mv ./* ${pkgdir}/usr/share/icons
-    curl -s https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt > LICENSE
+    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE > LICENSE
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
