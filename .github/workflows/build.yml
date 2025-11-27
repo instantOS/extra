@@ -8,9 +8,7 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    container:
-      image: archlinux:base-devel
-      options: --privileged
+    # No container directive here, we run on the host
 
     steps:
       - name: Checkout code
