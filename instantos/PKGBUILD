@@ -23,7 +23,8 @@ pkgver() {
 
 package() {
 
-    depends+=('instantdotfiles'
+    depends+=(
+        'ins'
         'instantutils'
         'instantwallpaper'
         'instantassist'

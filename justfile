@@ -14,3 +14,6 @@ check-fmt:
     find . -type f -name "*.sh" -not -path "*/.*" -exec shfmt -d -s -i 4 {} +
     find . -type f -name "PKGBUILD" -not -path "*/.*" -exec shfmt -d -s -i 4 {} +
     find . -type f -name "*.install" -not -path "*/.*" -exec shfmt -d -s -i 4 {} +
+
+fetch-pkgbuilds:
+    cp ~/workspace/instantCLI/pkgbuild/ins/* ./ins/
