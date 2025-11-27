@@ -26,59 +26,89 @@ build_package_in_container() {
         /bin/bash /build.sh
 }
 
-# Build local packages
-echo "Building local packages..."
+# List of packages to build
+packages_to_build=()
+
+# 1. Collect local packages
+echo "Collecting local packages..."
 for d in */; do
     if [ "$d" == "repo/" ]; then continue; fi
-    # Remove trailing slash
     dirname=${d%/}
-    
-    # Skip hidden directories and files
     if [[ $dirname == .* ]]; then continue; fi
     
     if [ -f "$dirname/PKGBUILD" ]; then
-        build_package_in_container "$dirname"
+        packages_to_build+=("$dirname")
     fi
 done
 
-# Build AUR packages
-echo "Building AUR packages..."
+# 2. Collect AUR packages
+echo "Collecting AUR packages..."
 if [ -f aurpackages ]; then
-    mkdir -p aur_temp
-    cd aur_temp
+    mkdir -p aur_sources
     
     while IFS= read -r line || [[ -n "$line" ]]; do
-        # Skip empty lines and comments
         if [[ -z "$line" ]] || [[ "$line" == \#* ]]; then continue; fi
         
-        # Handle package_name:output_name format
         pkgname=$(echo "$line" | cut -d':' -f1)
         
-        echo "Fetching AUR package: $pkgname"
-        # We clone on the host to keep things simple
-        git clone "https://aur.archlinux.org/$pkgname.git"
+        # Check if already cloned
+        if [ ! -d "aur_sources/$pkgname" ]; then
+            echo "Fetching AUR package: $pkgname"
+            git clone "https://aur.archlinux.org/$pkgname.git" "aur_sources/$pkgname"
+        fi
         
-        if [ -d "$pkgname" ]; then
-            # We need to go back up to call build_package_in_container with the correct path
-            cd ..
-            build_package_in_container "aur_temp/$pkgname"
-            cd aur_temp
+        if [ -d "aur_sources/$pkgname" ]; then
+            packages_to_build+=("aur_sources/$pkgname")
         else
             echo "Failed to clone $pkgname"
         fi
         
-    done < ../aurpackages
-    cd ..
-    rm -rf aur_temp
+    done < aurpackages
 fi
 
-# Generate repository database
-# We can do this in a container too, or on the host if repo-add is available.
-# Since we are assuming a self-hosted runner which might not have pacman, let's use a container.
-echo "Generating repository database..."
-docker run --rm \
-    -v "$(pwd)/repo:/repo" \
-    archlinux:base-devel \
-    /bin/bash -c "cd /repo && repo-add instant.db.tar.gz *.pkg.tar.zst"
+# 3. Build loop (Multi-pass)
+echo "Starting build process for ${#packages_to_build[@]} packages..."
+
+max_passes=10
+pass=1
+
+while [ ${#packages_to_build[@]} -gt 0 ]; do
+    echo "=== Build Pass $pass ==="
+    echo "Packages remaining: ${packages_to_build[*]}"
+    
+    failed_packages=()
+    built_count=0
+    
+    for pkg in "${packages_to_build[@]}"; do
+        # Try to build
+        if build_package_in_container "$pkg"; then
+            echo "Successfully built $pkg"
+            built_count=$((built_count + 1))
+        else
+            echo "Failed to build $pkg (might be missing dependencies, will retry)"
+            failed_packages+=("$pkg")
+        fi
+    done
+    
+    # Check progress
+    if [ $built_count -eq 0 ]; then
+        echo "ERROR: Could not build any of the remaining packages in this pass."
+        echo "Remaining packages: ${failed_packages[*]}"
+        echo "Possible causes: Circular dependencies, missing external dependencies, or build errors."
+        exit 1
+    fi
+    
+    # Prepare for next pass
+    packages_to_build=("${failed_packages[@]}")
+    pass=$((pass + 1))
+    
+    if [ $pass -gt $max_passes ]; then
+        echo "ERROR: Reached maximum number of build passes ($max_passes)."
+        exit 1
+    fi
+done
+
+# Cleanup
+rm -rf aur_sources
 
 echo "Build complete!"
