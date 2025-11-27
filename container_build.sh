@@ -3,6 +3,16 @@ set -e
 
 # This script runs INSIDE the container
 
+# Trap to restore permissions on exit (success or failure)
+cleanup() {
+    if [ -n "$HOST_UID" ] && [ -n "$HOST_GID" ]; then
+        echo "Restoring ownership to $HOST_UID:$HOST_GID..."
+        chown -R "$HOST_UID:$HOST_GID" /pkg
+        chown -R "$HOST_UID:$HOST_GID" /repo
+    fi
+}
+trap cleanup EXIT
+
 # 1. Configure local repo if it exists
 # This allows packages to depend on previously built packages
 if [ -f /repo/instant.db.tar.gz ]; then

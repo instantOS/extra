@@ -18,7 +18,10 @@ build_package_in_container() {
     # - The package directory to /pkg
     # - The repo directory to /repo
     # - The container_build.sh script to /build.sh
+    # We pass HOST_UID and HOST_GID to fix permissions after build
     docker run --rm \
+        -e HOST_UID="$(id -u)" \
+        -e HOST_GID="$(id -g)" \
         -v "$(pwd)/$pkg_dir:/pkg" \
         -v "$(pwd)/repo:/repo" \
         -v "$(pwd)/container_build.sh:/build.sh" \
