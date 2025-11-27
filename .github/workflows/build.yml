@@ -1,0 +1,33 @@
+name: Build and Deploy Arch Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+    # No container directive here, we run on the host
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Packages
+        run: ./build.sh
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./repo
+          force_orphan: true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          echo "Cleaning up workspace..."
+          sudo chown -R $USER:$USER . || true
+          echo "Pruning Docker..."
+          docker system prune -af || true

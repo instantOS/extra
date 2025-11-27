@@ -1,0 +1,29 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
+_pkgname=instantos-keyring
+pkgname=$_pkgname
+pkgver=202112152325
+pkgrel=1
+pkgdesc='instantOS PGP keyring'
+arch=(any)
+url='https://github.com/instantOS/instantos-keyring'
+license=(GPL)
+install=$pkgname.install
+
+provides=(instantos-keyring)
+conflicts=(instantos-keyring)
+
+source=("$_pkgname::git+https://github.com/instantOS/instantos-keyring.git")
+
+sha256sums=('SKIP')
+
+validpgpkeys=('380DFB57A7A140CEEFABC4CF81355D5FEFCC4619') # paperbenni <paperbenni@gmail.com>
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+package() {
+    cd $_pkgname
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+}

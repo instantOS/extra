@@ -1,0 +1,32 @@
+# Maintainer: paperbenni <paperbenni@gmail.com>
+_pkgname=instantshell
+pkgname=$_pkgname
+pkgver=202208012014
+pkgrel=1
+pkgdesc="zsh shell config for instantOS"
+url="https://github.com/instantOS/instantSHELL"
+arch=('any')
+license=('GPL2')
+depends=('sh' 'zsh' 'bash' 'git' 'zoxide' 'starship' 'commandfinder')
+makedepends=('git' 'zsh')
+provides=(instantshell)
+conflicts=(instantshell)
+source=("$_pkgname::git+https://github.com/instantOS/instantshell.git")
+
+sha256sums=('SKIP')
+
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
+}
+
+package() {
+    cd $_pkgname
+    make PREFIX=/usr/ DESTDIR="$pkgdir" install
+
+    git clone --depth=1 https://github.com/mattmc3/antidote "$pkgdir/usr/share/instantshell/antidote"
+
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -m644 -D "$pkgdir/usr/share/instantshell/antidote/LICENSE" "$pkgdir/usr/share/licenses/antidote-zsh/LICENSE"
+
+}
