@@ -81,6 +81,6 @@ fi
 # Generate repository database
 echo "Generating repository database..."
 cd repo
-repo-add instantos.db.tar.gz *.pkg.tar.zst
+repo-add instant.db.tar.gz *.pkg.tar.zst
 
 echo "Build complete!"
