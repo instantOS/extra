@@ -9,7 +9,7 @@ url='https://github.com/instantOS/instantLOCK.git'
 arch=('any')
 license=('MIT')
 makedepends=('git')
-depends=('libxrandr')
+depends=('libxrandr' 'libxinerama')
 source=("$_pkgname::git+https://github.com/instantOS/instantLOCK.git")
 sha256sums=('SKIP')
 
