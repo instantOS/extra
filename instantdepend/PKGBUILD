@@ -84,9 +84,7 @@ package() {
         'xdragon'
         'paperbash'
         'rofi'
-        'rangerplugins'
         'i3-wm'
-        'imgur.sh'
         'udevwait'
         'plymouth'
         'plymouth-theme-instantos')
