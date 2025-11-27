@@ -23,3 +23,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./repo
           force_orphan: true
+
+      - name: Cleanup
+        if: always()
+        run: |
+          echo "Cleaning up workspace..."
+          sudo chown -R $USER:$USER . || true

@@ -26,13 +26,23 @@ fi
 # We sync (-y) to pick up the local repo if added
 pacman -Syu --noconfirm --needed base-devel git sudo
 
-# Create a builder user
-useradd -m builder
-echo "builder ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
+# Create a builder user with the host's UID/GID
+# This ensures files created by makepkg are owned by the host user
+if [ -n "$HOST_UID" ] && [ -n "$HOST_GID" ]; then
+    groupadd -g "$HOST_GID" builder_group || true
+    useradd -u "$HOST_UID" -g "$HOST_GID" -m builder
+else
+    useradd -m builder
+fi
+
+echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Set permissions for the working directory
 # We assume the package source is mounted at /pkg
+# Since we matched UIDs, we might not need chown if the mount is correct,
+# but chown ensures the builder can write if the host dir was root-owned for some reason.
 chown -R builder:builder /pkg
+chown -R builder:builder /repo
 
 # Switch to builder user and build
 cd /pkg
