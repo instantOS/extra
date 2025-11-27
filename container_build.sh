@@ -16,7 +16,7 @@ chown -R builder:builder /pkg
 
 # Switch to builder user and build
 cd /pkg
-sudo -u builder makepkg -si --noconfirm
+sudo -u builder makepkg -s --noconfirm
 
 # Move built packages to the repo mount
 # We assume the repo is mounted at /repo
