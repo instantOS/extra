@@ -8,6 +8,13 @@ mkdir -p repo
 # Ensure repo directory is writable by the container user (usually 1000:1000 or similar, but 777 is safest for ephemeral builds)
 chmod 777 repo
 
+# Create a temporary builder image to avoid re-downloading updates for every package
+echo "Creating temporary builder image..."
+docker build -t instantos-builder - <<EOF
+FROM archlinux:base-devel
+RUN pacman -Syu --noconfirm --needed git sudo
+EOF
+
 # Function to build a package using Docker
 build_package_in_container() {
     local pkg_dir=$1
@@ -25,7 +32,7 @@ build_package_in_container() {
         -v "$(pwd)/$pkg_dir:/pkg" \
         -v "$(pwd)/repo:/repo" \
         -v "$(pwd)/container_build.sh:/build.sh" \
-        archlinux:base-devel \
+        instantos-builder \
         /bin/bash /build.sh
 }
 
