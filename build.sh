@@ -41,13 +41,15 @@ packages_to_build=()
 
 # 1. Collect local packages
 echo "Collecting local packages..."
-for d in */; do
+for d in packages/*/; do
     if [ "$d" == "repo/" ]; then continue; fi
     dirname=${d%/}
     if [[ $dirname == .* ]]; then continue; fi
+    # Remove packages/ prefix to get the package name
+    dirname=${dirname#packages/}
 
-    if [ -f "$dirname/PKGBUILD" ]; then
-        packages_to_build+=("$dirname")
+    if [ -f "packages/$dirname/PKGBUILD" ]; then
+        packages_to_build+=("packages/$dirname")
     fi
 done
 
