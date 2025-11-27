@@ -114,4 +114,7 @@ done
 # Cleanup
 rm -rf aur_sources
 
+echo "Aggressive Docker cleanup..."
+docker system prune -af
+
 echo "Build complete!"

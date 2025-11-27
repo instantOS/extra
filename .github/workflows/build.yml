@@ -29,3 +29,5 @@ jobs:
         run: |
           echo "Cleaning up workspace..."
           sudo chown -R $USER:$USER . || true
+          echo "Pruning Docker..."
+          docker system prune -af || true
