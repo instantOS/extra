@@ -29,6 +29,4 @@ package() {
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     install -m644 -D "$pkgdir/usr/share/instantshell/antidote/LICENSE" "$pkgdir/usr/share/licenses/antidote-zsh/LICENSE"
 
-
 }
-

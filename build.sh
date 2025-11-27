@@ -12,7 +12,7 @@ chmod 777 repo
 build_package_in_container() {
     local pkg_dir=$1
     echo "Building package in $pkg_dir using Docker"
-    
+
     # Run the build in a container
     # We mount:
     # - The package directory to /pkg
@@ -35,7 +35,7 @@ for d in */; do
     if [ "$d" == "repo/" ]; then continue; fi
     dirname=${d%/}
     if [[ $dirname == .* ]]; then continue; fi
-    
+
     if [ -f "$dirname/PKGBUILD" ]; then
         packages_to_build+=("$dirname")
     fi
@@ -45,25 +45,25 @@ done
 echo "Collecting AUR packages..."
 if [ -f aurpackages ]; then
     mkdir -p aur_sources
-    
-    while IFS= read -r line || [[ -n "$line" ]]; do
-        if [[ -z "$line" ]] || [[ "$line" == \#* ]]; then continue; fi
-        
+
+    while IFS= read -r line || [[ -n $line ]]; do
+        if [[ -z $line ]] || [[ $line == \#* ]]; then continue; fi
+
         pkgname=$(echo "$line" | cut -d':' -f1)
-        
+
         # Check if already cloned
         if [ ! -d "aur_sources/$pkgname" ]; then
             echo "Fetching AUR package: $pkgname"
             git clone "https://aur.archlinux.org/$pkgname.git" "aur_sources/$pkgname"
         fi
-        
+
         if [ -d "aur_sources/$pkgname" ]; then
             packages_to_build+=("aur_sources/$pkgname")
         else
             echo "Failed to clone $pkgname"
         fi
-        
-    done < aurpackages
+
+    done <aurpackages
 fi
 
 # 3. Build loop (Multi-pass)
@@ -75,10 +75,10 @@ pass=1
 while [ ${#packages_to_build[@]} -gt 0 ]; do
     echo "=== Build Pass $pass ==="
     echo "Packages remaining: ${packages_to_build[*]}"
-    
+
     failed_packages=()
     built_count=0
-    
+
     for pkg in "${packages_to_build[@]}"; do
         # Try to build
         if build_package_in_container "$pkg"; then
@@ -89,7 +89,7 @@ while [ ${#packages_to_build[@]} -gt 0 ]; do
             failed_packages+=("$pkg")
         fi
     done
-    
+
     # Check progress
     if [ $built_count -eq 0 ]; then
         echo "ERROR: Could not build any of the remaining packages in this pass."
@@ -97,11 +97,11 @@ while [ ${#packages_to_build[@]} -gt 0 ]; do
         echo "Possible causes: Circular dependencies, missing external dependencies, or build errors."
         exit 1
     fi
-    
+
     # Prepare for next pass
     packages_to_build=("${failed_packages[@]}")
     pass=$((pass + 1))
-    
+
     if [ $pass -gt $max_passes ]; then
         echo "ERROR: Reached maximum number of build passes ($max_passes)."
         exit 1

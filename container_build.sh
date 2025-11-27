@@ -7,9 +7,9 @@ set -e
 # This allows packages to depend on previously built packages
 if [ -f /repo/instant.db.tar.gz ]; then
     echo "Adding local repo to pacman.conf"
-    echo "[instant]" >> /etc/pacman.conf
-    echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
-    echo "Server = file:///repo" >> /etc/pacman.conf
+    echo "[instant]" >>/etc/pacman.conf
+    echo "SigLevel = Optional TrustAll" >>/etc/pacman.conf
+    echo "Server = file:///repo" >>/etc/pacman.conf
 fi
 
 # Install dependencies
@@ -18,7 +18,7 @@ pacman -Syu --noconfirm --needed base-devel git sudo
 
 # Create a builder user
 useradd -m builder
-echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "builder ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 
 # Set permissions for the working directory
 # We assume the package source is mounted at /pkg

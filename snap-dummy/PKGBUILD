@@ -26,7 +26,7 @@ package() {
 
     chmod +x *.sh
     mv *.sh ${pkgdir}/usr/bin/snap
-    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE > LICENSE
+    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE >LICENSE
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
 }

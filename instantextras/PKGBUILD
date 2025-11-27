@@ -26,7 +26,6 @@ package() {
     cd $_pkgname
     mkdir -p ${pkgdir}/usr/share/instantos
     echo 'instantdependpackages' >${pkgdir}/usr/share/instantos/epackages
-    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE > LICENSE
+    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE >LICENSE
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-

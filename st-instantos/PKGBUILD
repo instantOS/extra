@@ -19,24 +19,24 @@ source=("${_pkgname}::git+$url")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd $_pkgname
-  echo "$(date '+%Y%m%d%H%M')"
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
 }
 
 prepare() {
-  cd "${_pkgname}"
-  # skip terminfo which conflicts with nsurses
-  sed -i '/tic /d' Makefile
+    cd "${_pkgname}"
+    # skip terminfo which conflicts with nsurses
+    sed -i '/tic /d' Makefile
 }
 
 build() {
-  cd "${_pkgname}"
-  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+    cd "${_pkgname}"
+    make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
 package() {
-  cd "${_pkgname}"
-  make PREFIX=/usr DESTDIR="${pkgdir}" install
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    cd "${_pkgname}"
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
 }

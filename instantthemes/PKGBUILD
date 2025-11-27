@@ -22,7 +22,7 @@ pkgver() {
 
 package() {
     cd $_pkgname
-    
+
     make PREFIX=/usr/ DESTDIR="$pkgdir" install
     install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

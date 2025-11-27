@@ -21,4 +21,3 @@ package() {
     cd "$srcdir/$pkgname-$pkgver"
     cargo install --no-track --locked --root "$pkgdir/usr" --path .
 }
-

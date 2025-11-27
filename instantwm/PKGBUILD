@@ -19,18 +19,18 @@ source=("$_pkgname::git+https://github.com/instantOS/instantWM.git")
 md5sums=("SKIP")
 
 pkgver() {
-  cd $_pkgname
-  echo "$(date '+%Y%m%d%H%M')"
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
 }
 
 build() {
-  cd $_pkgname
-  make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
+    cd $_pkgname
+    make X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
 
 package() {
-  cd $_pkgname
-  rm config.h
-  make PREFIX=/usr DESTDIR="$pkgdir" install
-  install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    cd $_pkgname
+    rm config.h
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
