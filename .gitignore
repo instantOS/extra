@@ -7,11 +7,11 @@
 .nvimlog
 
 build
-packages/build/*
-packages/packages/packages/instantmenu/instantmenu-*
-packages/packages/instantmenu/instantmenu
-packages/packages/islide/islide-*
-packages/packages/islide/islide
+build/*
+packages/instantmenu/instantmenu-*
+packages/instantmenu/instantmenu
+packages/islide/islide-*
+packages/islide/islide
 packages/instantassist/instantassist
 packages/instantlock/instantlock-*
 packages/instantlock/instantlock
@@ -46,7 +46,7 @@ packages/grub-instantos/grub-instantos
 packages/st-luke/st-luke
 # Local Netlify folder
 .netlify
-plymouth*/plymouth*
+packages/plymouth*/plymouth*
 packages/mpm/mpm
 packages/instantsupport/instantsupport
 packages/instantclipmenu/instantclipmenu
