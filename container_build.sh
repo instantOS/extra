@@ -41,8 +41,8 @@ echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # We assume the package source is mounted at /pkg
 # Since we matched UIDs, we might not need chown if the mount is correct,
 # but chown ensures the builder can write if the host dir was root-owned for some reason.
-chown -R builder:builder /pkg
-chown -R builder:builder /repo
+chown -R builder: /pkg
+chown -R builder: /repo
 
 # Switch to builder user and build
 cd /pkg
