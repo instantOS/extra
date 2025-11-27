@@ -24,7 +24,7 @@ package() {
     RAW="https://raw.githubusercontent.com/instantOS/instantLOGO/main"
     cd $_pkgname || exit 1
     mkdir -p ${pkgdir}/usr/share/plymouth/themes/instantos
-    mkdir boot
+    mkdir -p boot
     cd boot || exit 1
     for i in {0..29}; do
         echo "downloading frame $i"
