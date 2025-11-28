@@ -67,7 +67,7 @@ depends=('picom'
     'alacarte'
 )
 
-makedepends=('bash' 'curl')
+makedepends=('bash' 'curl' 'git')
 provides=(instantdepend)
 conflicts=(instantdepend)
 source=("$_pkgname::git+https://github.com/instantOS/instantMETA.git")

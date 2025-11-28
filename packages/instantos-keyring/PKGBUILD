@@ -7,6 +7,7 @@ pkgdesc='instantOS PGP keyring'
 arch=(any)
 url='https://github.com/instantOS/instantos-keyring'
 license=(GPL)
+makedepends=('git')
 install=$pkgname.install
 
 provides=(instantos-keyring)
