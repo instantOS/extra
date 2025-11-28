@@ -9,7 +9,7 @@ arch=('any')
 license=('GPL2')
 depends=('firefox')
 
-makedepends=('bash' 'curl')
+makedepends=('bash' 'curl' 'git')
 provides=(instantextra)
 conflicts=(instantextra)
 source=("$_pkgname::git+https://github.com/instantOS/instantMETA.git")

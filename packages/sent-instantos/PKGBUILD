@@ -9,6 +9,7 @@ url='https://github.com/instantOS/sent.git'
 arch=('any')
 license=('MIT')
 depends=('libxft' 'fontconfig' 'libpng')
+makedepends=('git')
 provides=('sent')
 conflicts=(sent)
 

@@ -35,7 +35,7 @@ else
     useradd -m builder
 fi
 
-echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+echo "builder ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
 
 # Set permissions for the working directory
 # We assume the package source is mounted at /pkg

@@ -28,10 +28,10 @@ package() {
     cd boot || exit 1
     for i in {0..29}; do
         echo "downloading frame $i"
-        wget "$RAW"/boot/progress-"$i".png
+        curl -o progress-"$i".png "$RAW"/boot/progress-"$i".png
     done
-    wget "$RAW/boot/instantos.plymouth"
-    wget "$RAW/boot/instantos.script"
+    curl -o instantos.plymouth "$RAW/boot/instantos.plymouth"
+    curl -o instantos.script "$RAW/boot/instantos.script"
     cd .. || exit 1
     mv ./boot/* "${pkgdir}"/usr/share/plymouth/themes/instantos/
 }
