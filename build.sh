@@ -39,21 +39,7 @@ build_package_in_container() {
 # List of packages to build
 packages_to_build=()
 
-# 1. Collect local packages
-echo "Collecting local packages..."
-for d in packages/*/; do
-    if [ "$d" == "repo/" ]; then continue; fi
-    dirname=${d%/}
-    if [[ $dirname == .* ]]; then continue; fi
-    # Remove packages/ prefix to get the package name
-    dirname=${dirname#packages/}
-
-    if [ -f "packages/$dirname/PKGBUILD" ]; then
-        packages_to_build+=("packages/$dirname")
-    fi
-done
-
-# 2. Collect AUR packages
+# 1. Collect AUR packages first
 echo "Collecting AUR packages..."
 if [ -f aurpackages ]; then
     mkdir -p aur_sources
@@ -77,6 +63,20 @@ if [ -f aurpackages ]; then
 
     done <aurpackages
 fi
+
+# 2. Collect local packages second
+echo "Collecting local packages..."
+for d in packages/*/; do
+    if [ "$d" == "repo/" ]; then continue; fi
+    dirname=${d%/}
+    if [[ $dirname == .* ]]; then continue; fi
+    # Remove packages/ prefix to get the package name
+    dirname=${dirname#packages/}
+
+    if [ -f "packages/$dirname/PKGBUILD" ]; then
+        packages_to_build+=("packages/$dirname")
+    fi
+done
 
 # 3. Build loop (Multi-pass)
 echo "Starting build process for ${#packages_to_build[@]} packages..."
