@@ -46,7 +46,8 @@ chown -R builder: /repo
 
 # Switch to builder user and build
 cd /pkg
-sudo -u builder makepkg -s --noconfirm
+# Limit Rust build parallelism to avoid OOM in CI
+sudo -u builder CARGO_BUILD_JOBS=2 makepkg -s --noconfirm
 
 # Move built packages to the repo mount
 # We assume the repo is mounted at /repo
