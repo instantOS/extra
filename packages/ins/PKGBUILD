@@ -13,8 +13,8 @@ optdepends=(
     'kitty: default terminal for scratchpad'
 )
 source=("$pkgname-$pkgver.tar.gz::https://github.com/instantOS/instantCLI/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')  # Will be calculated after first release
-options=('!lto')  # Disable LTO as recommended for Rust packages
+sha256sums=('SKIP') # Will be calculated after first release
+options=('!lto')    # Disable LTO as recommended for Rust packages
 
 prepare() {
     cd "instantCLI-$pkgver"
