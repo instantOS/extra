@@ -18,6 +18,13 @@ jobs:
       - name: Build Packages
         run: ./build.sh
 
+      - name: Generate Directory Listing
+        uses: gacts/directory-listing@v1
+        with:
+          target: ./repo
+          show-hidden: false
+          overwrite: true
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
