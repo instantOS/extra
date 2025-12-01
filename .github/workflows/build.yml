@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    timeout-minutes: 2880
     runs-on: self-hosted
     # No container directive here, we run on the host
 
