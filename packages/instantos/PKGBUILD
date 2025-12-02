@@ -31,7 +31,6 @@ package() {
         'instantthemes'
         'instantwidgets'
         'instantcursors'
-        'instantshell'
         'ttf-firacode-nerd'
         'instantconf'
         'instantwm'
