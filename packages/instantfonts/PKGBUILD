@@ -7,7 +7,7 @@ pkgdesc="meta package for instantOS fonts using official nerd-fonts"
 arch=('any')
 license=('MIT')
 depends=('ttf-firacode-nerd'
-         'otf-source-code-pro-nerd')
+         'otf-firamono-nerd')
 makedepends=('bash' 'git')
 provides=(instantfonts)
 conflicts=(instantfonts)
