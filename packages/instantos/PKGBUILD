@@ -32,7 +32,7 @@ package() {
         'instantwidgets'
         'instantcursors'
         'instantshell'
-        'ttf-nerd-fonts-fira-code'
+        'ttf-firacode-nerd'
         'instantconf'
         'instantwm'
         'instantlock'

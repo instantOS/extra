@@ -1,34 +1,29 @@
 # Maintainer: paperbenni <paperbenni@gmail.com>
 _pkgname=instantfonts
 pkgname=$_pkgname
-pkgver=3.0.2
+pkgver=3.4.0
 pkgrel=1
-pkgdesc="patched fonts for instantOS"
+pkgdesc="meta package for instantOS fonts using official nerd-fonts"
 arch=('any')
 license=('MIT')
-depends=('sh')
-makedepends=('wget' 'git' 'atool')
+depends=('ttf-firacode-nerd'
+         'otf-source-code-pro-nerd')
+makedepends=('bash' 'git')
 provides=(instantfonts)
 conflicts=(instantfonts)
+source=("$_pkgname::git+https://github.com/instantOS/instantMETA.git")
 
-set -e
+sha256sums=('SKIP')
 
-prepare() {
-    mkdir -p $_pkgname
-    cd "$_pkgname"
-}
-
-build() {
-    cd "$_pkgname"
-    echo "fetching fonts"
-    wget -q "https://github.com/ryanoasis/nerd-fonts/releases/download/v$pkgver/SourceCodePro.tar.xz"
-    atool -x ./*.tar.xz
+pkgver() {
+    cd $_pkgname
+    echo "$(date '+%Y%m%d%H%M')"
 }
 
 package() {
     cd $_pkgname
-    mkdir -p "${pkgdir}"/usr/share/fonts/instantfonts
-    mv ./*/*.ttf .
-    chmod 644 ./*.ttf
-    mv ./*.ttf "${pkgdir}"/usr/share/fonts/instantfonts/
+    mkdir -p ${pkgdir}/usr/share/instantos
+    echo 'instantfonts' >${pkgdir}/usr/share/instantos/fonts
+    curl -s https://raw.githubusercontent.com/instantOS/instantOS/refs/heads/main/LICENSE >LICENSE
+    install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
