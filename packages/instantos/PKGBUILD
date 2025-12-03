@@ -28,6 +28,7 @@ package() {
         'instantutils'
         'instantwallpaper'
         'instantassist'
+        'instantpass'
         'instantthemes'
         'instantwidgets'
         'instantcursors'
